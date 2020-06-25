@@ -24,33 +24,41 @@ print(celsius)
 
 # Even-Odd Machine
 
+on = True
+
 
 def check_num():
     """"Verify if the number is even or odd."""
-    num = input("Enter a number: ")
+    while True:
+        num = int(input("Enter a number: "))
 
-    x = int(num)
-    if x % 2 == 0:
-        print('Even')
-    elif x % 2 == 1:
-        print('Odd')
-    elif x == str(x):
-        print('Enter a number!')
+        try:
+            if num % 2 == 0:
+                print('Even')
+                break
+            elif num % 2 == 1:
+                print('Odd')
+                break
+        except ValueError:
+            print('Enter only numbers!!!')
 
 
 def ask():
-    print("wanna try again? type yes/no")
-    global y
-    y = input()
+    global on
+    while True:
+        print("wanna try again? type yes/no")
+        answer = input()
+
+        if answer == 'yes':
+            break
+        elif answer == 'no':
+            on = False
+            break
+        else:
+            continue
 
 
-while 1:
+while on:
     check_num()
     ask()
 
-    if y == 'yes':
-        continue
-    elif y == 'no':
-        break
-    else:
-        ask()
