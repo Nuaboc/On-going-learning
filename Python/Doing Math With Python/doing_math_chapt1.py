@@ -34,7 +34,7 @@ def check_num():
         print('Even')
     elif x % 2 == 1:
         print('Odd')
-    elif x.is_
+    elif x == str(x):
         print('Enter a number!')
 
 
