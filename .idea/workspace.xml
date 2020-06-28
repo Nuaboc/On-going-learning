@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fb1d30d-0b61-45dd-9ccd-4bba0e64070a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,11 +41,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="114">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise4.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise5.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -60,6 +80,8 @@
         <option value="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise1.py" />
         <option value="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise2.py" />
         <option value="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise3.py" />
+        <option value="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise4.py" />
+        <option value="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise5.py" />
       </list>
     </option>
   </component>
@@ -293,8 +315,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="114">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
