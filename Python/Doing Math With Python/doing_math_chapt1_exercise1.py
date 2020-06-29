@@ -15,18 +15,18 @@ def check_num():
         try:
             if int(num) % 2 == 0:
                 print('Even')
+                # print the next 9 'even' numbers.
                 for i in range(20):
                     if i % 2 == 0:
                         print(int(num) + i)
-                        print("this")
                 break
 
             elif int(num) % 2 == 1:
                 print('Odd')
+                # print the next 9 'odd' numbers.
                 for i in range(20):
-                    if i % 2 == 1:
+                    if i % 2 == 0:
                         print(int(num) + i)
-                        print("that")
                 break
 
         except ValueError:

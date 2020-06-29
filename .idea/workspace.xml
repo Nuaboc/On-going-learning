@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fb1d30d-0b61-45dd-9ccd-4bba0e64070a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,11 +21,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state relative-caret-position="334">
+              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
             </state>
           </provider>
         </entry>
@@ -59,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="34">
+              <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -77,11 +75,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1.py" />
-        <option value="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise1.py" />
         <option value="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise2.py" />
         <option value="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise3.py" />
         <option value="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise4.py" />
         <option value="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise5.py" />
+        <option value="$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise1.py" />
       </list>
     </option>
   </component>
@@ -141,7 +139,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.doing_math_chapt1_exercise2">
+  <component name="RunManager" selected="Python.doing_math_chapt1_exercise1">
     <configuration name="doing_math_chapt1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="On-going-learning" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -207,8 +205,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.doing_math_chapt1_exercise2" />
         <item itemvalue="Python.doing_math_chapt1_exercise1" />
+        <item itemvalue="Python.doing_math_chapt1_exercise2" />
         <item itemvalue="Python.doing_math_chapt1" />
       </list>
     </recent_temporary>
@@ -271,7 +269,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47453955" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38353196" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -292,20 +290,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="trying to improve the code..." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -329,8 +313,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="34">
+          <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python/Doing Math With Python/doing_math_chapt1_exercise1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
         </state>
       </provider>
     </entry>
