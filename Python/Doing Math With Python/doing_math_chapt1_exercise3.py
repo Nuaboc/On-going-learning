@@ -27,27 +27,27 @@ def miles_km():
 
 
 def kilograms_pounds():
-    kilograms = ''
-    lb = kilograms
+    kg = float(input('Enter weight in kilograms: '))
+    lb = kg * 2.2046
     print('Mass in pounds: {0}'.format(lb))
 
 
 def pounds_kilograms():
-    pounds = ''
-    kg = pounds
+    pounds = float(input('Enter weight in pounds: '))
+    kg = pounds * .454
     print('Mass in kilograms: {0}'.format(kg))
 
 
 def celsius_fahrenheit():
-    celsius = ''
-    f = celsius
+    celsius = float(input('Enter temperature in Celsius: '))
+    f = celsius * (9/5) + 32
     print('Temperature in Fahrenheit: {0}'.format(f))
 
 
 def fahrenheit_celsius():
-    fahrenheit = ''
-    c = fahrenheit
-    print('temperature in Celsius: {0}'.format(c))
+    fahrenheit = float(input('Enter temperature in Fahrenheit: '))
+    c = (fahrenheit - 32) * (5/9)
+    print('Temperature in Celsius: {0}'.format(c))
 
 
 if __name__ == '__main__':
