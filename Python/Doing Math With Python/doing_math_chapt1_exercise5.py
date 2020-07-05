@@ -5,11 +5,6 @@
 # Give Exit Power to the User
 
 
-"""
-Run until exit layout
-"""
-
-
 def fun():
     print('I am in an endless loop')
 
