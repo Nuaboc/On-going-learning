@@ -13,20 +13,20 @@ def check_num():
         num = input("Enter a number: ")
 
         try:
-            if int(num) % 2 == 0:
+            if round(float(num)) % 2 == 0:
                 print('Even')
                 # print the next 9 'even' numbers.
                 for i in range(20):
                     if i % 2 == 0:
-                        print(int(num) + i)
+                        print(round(float(num)) + i)
                 break
 
-            elif int(num) % 2 == 1:
+            elif round(float(num)) % 2 == 1:
                 print('Odd')
                 # print the next 9 'odd' numbers.
                 for i in range(20):
                     if i % 2 == 0:
-                        print(int(num) + i)
+                        print(round(float(num)) + i)
                 break
 
         except ValueError:
