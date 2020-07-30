@@ -142,9 +142,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.doing_math_chapt1_exercise1" />
+        <item itemvalue="Python.doing_math_chapt2" />
         <item itemvalue="Python.scratch" />
         <item itemvalue="Python.doing_math_chapt3" />
-        <item itemvalue="Python.doing_math_chapt2" />
         <item itemvalue="Python.doing_math_chapt1_exercise5" />
       </list>
     </recent_temporary>
@@ -205,26 +205,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="trying to improve the code..." />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1379" height="256" key="GridCell.Tab.0.bottom" timestamp="1594518999388">
+    <state width="1379" height="256" key="GridCell.Tab.0.bottom" timestamp="1594520623069">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1379" height="256" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1594518999388" />
-    <state width="1379" height="256" key="GridCell.Tab.0.center" timestamp="1594518999388">
+    <state width="1379" height="256" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1594520623069" />
+    <state width="1379" height="256" key="GridCell.Tab.0.center" timestamp="1594520623068">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1379" height="256" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1594518999388" />
-    <state width="1379" height="256" key="GridCell.Tab.0.left" timestamp="1594518999388">
+    <state width="1379" height="256" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1594520623068" />
+    <state width="1379" height="256" key="GridCell.Tab.0.left" timestamp="1594520623068">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1379" height="256" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1594518999388" />
-    <state width="1379" height="256" key="GridCell.Tab.0.right" timestamp="1594518999388">
+    <state width="1379" height="256" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1594520623068" />
+    <state width="1379" height="256" key="GridCell.Tab.0.right" timestamp="1594520623068">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1379" height="256" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1594518999388" />
-    <state x="377" y="274" key="com.intellij.ide.util.TipDialog" timestamp="1594518117089">
+    <state width="1379" height="256" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1594520623068" />
+    <state x="377" y="274" key="com.intellij.ide.util.TipDialog" timestamp="1594519721052">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="377" y="274" key="com.intellij.ide.util.TipDialog/0.23.1440.877@0.23.1440.877" timestamp="1594518117089" />
+    <state x="377" y="274" key="com.intellij.ide.util.TipDialog/0.23.1440.877@0.23.1440.877" timestamp="1594519721052" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
