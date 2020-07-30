@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+ HEAD
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-1" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+</project>
+=======
   <component name="ChangeListManager">
     <list default="true" id="0fb1d30d-0b61-45dd-9ccd-4bba0e64070a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -243,3 +254,4 @@
     </breakpoint-manager>
   </component>
 </project>
+>>>>>>> 2d828b095e86706e148754c498578659127acb65
