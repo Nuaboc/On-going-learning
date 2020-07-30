@@ -4,6 +4,15 @@
 
 # Even-Odd Vending Machine
 
+
+import matplotlib.pyplot as plt
+
+x_nums = range(1, 11)
+y_nums = []
+
+# plt.plot(x_nums, y_nums)
+
+
 on = True
 
 
@@ -19,6 +28,10 @@ def check_num():
                 for i in range(20):
                     if i % 2 == 0:
                         print(round(float(num)) + i)
+                        y_nums.append(round(float(num)) + i)
+                plt.plot(x_nums, y_nums)
+                plt.show()
+
                 break
 
             elif round(float(num)) % 2 == 1:
@@ -27,6 +40,10 @@ def check_num():
                 for i in range(20):
                     if i % 2 == 0:
                         print(round(float(num)) + i)
+                        y_nums.append(round(float(num)) + i)
+                plt.plot(x_nums, y_nums)
+                plt.show()
+
                 break
 
         except ValueError:
