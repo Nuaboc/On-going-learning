@@ -7,9 +7,11 @@ Date: August 5, 2020
 
 import random
 
-first = 1
+first = input('Type the first number: ')
+first = int(first)
 
-last = 6
+last = input('Type the last number: ')
+last = int(last)
 
 roll = random.randint(first, last)
 

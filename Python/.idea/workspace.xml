@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b3a435d-e635-4ae3-ae81-c2809b9aa0fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Python Programming Certification/currency.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Python Programming Certification/exchangeit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Python Programming Certification/testcurrency.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Python Programming Certification/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python Programming Certification/currency_converter_main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python Programming Certification/die .py" beforeDir="false" afterPath="$PROJECT_DIR$/Python Programming Certification/die .py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,10 +21,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/module5/unit2/module.py" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nuaboc\Desktop" />
       <recent name="D:\Repos\Github\On-going-learning\Python\Python Programming Certification" />
     </key>
   </component>
@@ -160,33 +157,49 @@
       <option name="presentableId" value="Default" />
       <updated>1595082857903</updated>
     </task>
+    <task id="LOCAL-00001" summary="..">
+      <created>1597078430214</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1597078430214</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=".." />
+    <option name="LAST_COMMIT_MESSAGE" value=".." />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="2383" y="411" key="FileChooserDialogImpl" timestamp="1597028754945">
+    <state x="2196" y="305" key="CommitChangelistDialog2" timestamp="1597078428375">
       <screen x="1920" y="305" width="1366" height="728" />
     </state>
-    <state x="2383" y="411" key="FileChooserDialogImpl/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597028754945" />
-    <state width="1345" height="175" key="GridCell.Tab.0.bottom" timestamp="1597078014428">
+    <state x="2196" y="305" key="CommitChangelistDialog2/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078428375" />
+    <state x="2383" y="411" key="FileChooserDialogImpl" timestamp="1597078851487">
+      <screen x="1920" y="305" width="1366" height="728" />
+    </state>
+    <state x="2383" y="411" key="FileChooserDialogImpl/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078851487" />
+    <state width="1345" height="175" key="GridCell.Tab.0.bottom" timestamp="1597078859911">
       <screen x="1920" y="305" width="1366" height="728" />
     </state>
     <state width="1899" height="175" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1596559786716" />
-    <state width="1345" height="175" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078014428" />
-    <state width="1345" height="175" key="GridCell.Tab.0.center" timestamp="1597078014428">
+    <state width="1345" height="175" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078859911" />
+    <state width="1345" height="175" key="GridCell.Tab.0.center" timestamp="1597078859911">
       <screen x="1920" y="305" width="1366" height="728" />
     </state>
     <state width="1899" height="175" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1596559786716" />
-    <state width="1345" height="175" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078014428" />
-    <state width="1345" height="175" key="GridCell.Tab.0.left" timestamp="1597078014428">
+    <state width="1345" height="175" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078859911" />
+    <state width="1345" height="175" key="GridCell.Tab.0.left" timestamp="1597078859910">
       <screen x="1920" y="305" width="1366" height="728" />
     </state>
     <state width="1899" height="175" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1596559786716" />
-    <state width="1345" height="175" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078014428" />
-    <state width="1345" height="175" key="GridCell.Tab.0.right" timestamp="1597078014428">
+    <state width="1345" height="175" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078859910" />
+    <state width="1345" height="175" key="GridCell.Tab.0.right" timestamp="1597078859911">
       <screen x="1920" y="305" width="1366" height="728" />
     </state>
     <state width="1899" height="175" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1596559786716" />
-    <state width="1345" height="175" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078014428" />
+    <state width="1345" height="175" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078859911" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
