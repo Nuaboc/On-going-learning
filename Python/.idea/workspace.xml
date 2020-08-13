@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b3a435d-e635-4ae3-ae81-c2809b9aa0fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/On-going-learning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/On-going-learning.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python Programming Certification/die .py" beforeDir="false" afterPath="$PROJECT_DIR$/Python Programming Certification/die .py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +21,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -176,9 +179,10 @@
       <screen x="1920" y="305" width="1366" height="728" />
     </state>
     <state x="2196" y="305" key="CommitChangelistDialog2/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078428375" />
-    <state x="2383" y="411" key="FileChooserDialogImpl" timestamp="1597078851487">
-      <screen x="1920" y="305" width="1366" height="728" />
+    <state x="651" y="151" key="FileChooserDialogImpl" timestamp="1597176699168">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="651" y="151" key="FileChooserDialogImpl/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1597176699168" />
     <state x="2383" y="411" key="FileChooserDialogImpl/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078851487" />
     <state width="1345" height="175" key="GridCell.Tab.0.bottom" timestamp="1597078859911">
       <screen x="1920" y="305" width="1366" height="728" />
@@ -200,6 +204,10 @@
     </state>
     <state width="1899" height="175" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1596559786716" />
     <state width="1345" height="175" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078859911" />
+    <state x="2104" y="314" key="SettingsEditor" timestamp="1597274917605">
+      <screen x="1920" y="305" width="1366" height="728" />
+    </state>
+    <state x="2104" y="314" key="SettingsEditor/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597274917605" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
