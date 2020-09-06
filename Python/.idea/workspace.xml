@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b3a435d-e635-4ae3-ae81-c2809b9aa0fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/On-going-learning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/On-going-learning.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +30,28 @@
       <recent name="D:\Repos\Github\On-going-learning\Python\Python Programming Certification" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.die ">
+  <component name="RunManager" selected="Python.testcurrency (1)">
+    <configuration name="currency" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python Programming Certification" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python Programming Certification/currency.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="die " type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -96,27 +115,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="testcurrency" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python Programming Certification" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\Repos\Github\On-going-learning\Python\Python Programming Certification\testcurrency.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -140,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.die " />
-        <item itemvalue="Python.exchangeit" />
-        <item itemvalue="Python.tests" />
         <item itemvalue="Python.testcurrency (1)" />
-        <item itemvalue="Python.testcurrency" />
+        <item itemvalue="Python.exchangeit" />
+        <item itemvalue="Python.currency" />
+        <item itemvalue="Python.die " />
+        <item itemvalue="Python.tests" />
       </list>
     </recent_temporary>
   </component>
@@ -184,25 +182,25 @@
     </state>
     <state x="651" y="151" key="FileChooserDialogImpl/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1597176699168" />
     <state x="2383" y="411" key="FileChooserDialogImpl/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078851487" />
-    <state width="1345" height="175" key="GridCell.Tab.0.bottom" timestamp="1597078859911">
-      <screen x="1920" y="305" width="1366" height="728" />
+    <state width="1899" height="414" key="GridCell.Tab.0.bottom" timestamp="1597284976570">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="175" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1596559786716" />
+    <state width="1899" height="414" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1597284976570" />
     <state width="1345" height="175" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078859911" />
-    <state width="1345" height="175" key="GridCell.Tab.0.center" timestamp="1597078859911">
-      <screen x="1920" y="305" width="1366" height="728" />
+    <state width="1899" height="414" key="GridCell.Tab.0.center" timestamp="1597284976569">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="175" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1596559786716" />
+    <state width="1899" height="414" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1597284976569" />
     <state width="1345" height="175" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078859911" />
-    <state width="1345" height="175" key="GridCell.Tab.0.left" timestamp="1597078859910">
-      <screen x="1920" y="305" width="1366" height="728" />
+    <state width="1899" height="414" key="GridCell.Tab.0.left" timestamp="1597284976569">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="175" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1596559786716" />
+    <state width="1899" height="414" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1597284976569" />
     <state width="1345" height="175" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078859910" />
-    <state width="1345" height="175" key="GridCell.Tab.0.right" timestamp="1597078859911">
-      <screen x="1920" y="305" width="1366" height="728" />
+    <state width="1899" height="414" key="GridCell.Tab.0.right" timestamp="1597284976570">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="175" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1596559786716" />
+    <state width="1899" height="414" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1597284976569" />
     <state width="1345" height="175" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078859911" />
     <state x="2104" y="314" key="SettingsEditor" timestamp="1597274917605">
       <screen x="1920" y="305" width="1366" height="728" />
@@ -216,11 +214,6 @@
           <url>file://$PROJECT_DIR$/Python Programming Certification/project2.py</url>
           <line>23</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Python Programming Certification/testcurrency.py</url>
-          <line>176</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
