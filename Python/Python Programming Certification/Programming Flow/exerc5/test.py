@@ -56,7 +56,7 @@ def test_valid_format():
     # Invalid, bad commas
     result = func.valid_format('12345')
     introcs.assert_equals(False, result)
-    
+
     result = func.valid_format('91,2345')
     introcs.assert_equals(False, result)
     

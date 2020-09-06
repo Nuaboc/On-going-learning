@@ -34,12 +34,12 @@ def valid_format(s):
 
     # check = introcs.
     num_string = bool
-    check = test(s)
+    # check = test(s)
 
     if s[0] == '0' and len(s) > 1:
         num_string = False
         print(1)
-    elif not check:
+    elif not test(s):
         num_string = False
         print(2)
     else:
@@ -53,23 +53,27 @@ def valid_format(s):
 
 def test(s):
     find = introcs.find_str(s, ',')
-    if s[find] != s[-4] and len(s) > 4:
-        # print(find)
+    if find == -1 and len(s) <= 3:
         print('a')
+        return introcs.isdecimal(s)
+
+    elif len(s) < 5 and find != -1:
+        print('b')
+        return False
+
+    elif s[find] != s[-4]:
+        # print(find)
+        print('c')
         return False
 
     elif find != -1 and len(s) > 4:
         remove = introcs.replace_str(s, s[find], '')
-        print('b')
+        print('d')
         return introcs.isdecimal(remove)
 
-    elif find == -1 and len(s) <= 3:
-        print('c')
-        return introcs.isdecimal(s)
-
     else:
-        print('d')
+        print('z')
         return False
 
 
-print(valid_format('91,2345'))
+print(valid_format('4,'))
