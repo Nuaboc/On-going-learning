@@ -1,7 +1,7 @@
 """
 A collection of functions to support the translation of words into Pig Latin.
 
-This module contains two functions.  The first function searchs for the location of the
+This module contains two functions.  The first function searches for the location of the
 first vowel.  The second function uses this as a helper to perform the conversion.
 
 Author: Gabriel Martinez
@@ -92,5 +92,29 @@ def pigify(s):
     assert type(s) == str
 
     check = first_vowel(s)
+    # word = str
 
-    # return word
+    if check == 0:
+        print('a')
+        word = s + 'hay'
+        print(word)
+
+    elif check == -1:
+        print('b')
+        word = s + 'ay'
+
+    elif s[0] == 'q':
+        print('c')
+        word = s.replace(s[0:2], '')
+        word += 'quay'
+
+    else:
+        print('d')
+        pre = s[0:check]
+        # remove all consonants before the first vowel
+        word = s.replace(pre, '', 1)
+        # append the removed consonants
+        word += pre + 'ay'
+        # add 'ay' to the end of word
+
+    return word

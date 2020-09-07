@@ -89,6 +89,9 @@ def test_pigify():
     result = funcs.pigify('ssssh')
     introcs.assert_equals('sssshay', result)
 
+    result = funcs.pigify('bye')
+    introcs.assert_equals('yebay', result)
+
 
 test_first_vowel()
 test_pigify()
