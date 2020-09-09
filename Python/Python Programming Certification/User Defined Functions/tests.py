@@ -1,5 +1,5 @@
 """
-A test script to test the module funcs.py
+A test script to test the module func.py
 
 Note that there are multiple test procedures, and they are called in the order that
 the functions are (or should be) implemented.
