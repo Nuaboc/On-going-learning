@@ -1,8 +1,8 @@
 """
 A function to test for floats in European format
 
-Author: YOUR NAME HERE
-Date: THE DATE HERE
+Author: Gabriel Martinez
+Date: September 9, 2020
 """
 import introcs
 
@@ -35,12 +35,27 @@ def iseurofloat(s):
     Parameter s: The string to check
     Precondition: s is a string
     """
-    #asserts type(s) == str
+    assert type(s) == str
 
     try:
-        check = introcs.index_str(s, '.')
-        # repl = introcs.replace_str(s, s[check], ',')
+        print('try')
+        coma = introcs.index_str(s, ',')
+        print('1')
+        negative = '-' in s[coma + 1]
+        print(2)
+        error1 = introcs.index_str(str(negative), str(False))
+        print(3)
+        begin = ',' == s[0]
+        print(4)
+        error2 = introcs.index_str(str(begin), str(False))
+        print(5)
+        dot = '.' in s
+        print(6)
+        error3 = introcs.index_str(str(dot), str(False))
+        double = ',' in s[coma + 1:]
+        error4 = introcs.index_str(str(double), str(False))
         return True
+
     except:
+        print('except')
         return False
-        
