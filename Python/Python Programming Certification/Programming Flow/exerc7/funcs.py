@@ -28,8 +28,8 @@ def time_to_military(s):
     """
 
     # Split up the string
-    pos1 = introcs.find_str(s,':')
-    pos2 = introcs.find_str(s,' ')
+    pos1 = introcs.find_str(s, ':')
+    pos2 = introcs.find_str(s, ' ')
 
     # Extract hours and minutes
     hour = int(s[:pos1])
@@ -37,19 +37,19 @@ def time_to_military(s):
     suff = s[pos2+1:]
 
     # Adjust hour to be correct.
-    if (suff == 'PM'):
+    if suff == 'PM' and hour < 12:
         hour += 12
-    elif hour == 12:
+    elif suff == 'AM' and hour == 12:
         hour = 0
 
     # Add a leading zero if necessary
-    if (hour <= 10):
+    if hour < 10:
         hour = '0'+str(hour)
     else:
         hour = str(hour)
 
     # Glue it back together
-    return str(hour)+':'+mins
+    return str(hour) + ':' + mins
 
 
 def time_to_minutes(s):
@@ -66,8 +66,8 @@ def time_to_minutes(s):
     """
 
     # Find the separators
-    pos1 = introcs.find_str(s,':')
-    pos2 = introcs.find_str(s,' ')
+    pos1 = introcs.find_str(s, ':')
+    pos2 = introcs.find_str(s, ' ')
 
     # Get hour and convert to int
     hour = s[:pos1]
@@ -75,13 +75,13 @@ def time_to_minutes(s):
 
     # Adjust hour to be correct.
     suff = s[pos2+1:]
-    if (suff == 'PM'):
-        hoar = hour+12
-    elif (suff == 'AM' and hour == 12):
+    if suff == 'PM' and hour < 12:
+        hour = hour + 12
+    elif suff == 'AM' and hour == 12:
         hour = 0
 
     # Get min and convert to int
-    mins = s[pos1:pos2]
+    mins = s[pos1+1:pos2]
     mins = int(mins)
 
-    return hour*60+mins
+    return hour * 60 + mins
