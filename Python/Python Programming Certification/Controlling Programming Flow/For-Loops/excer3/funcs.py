@@ -21,7 +21,7 @@ def factorial(n):
     Parameter n: The integer for the factorial
     Precondition: n is an int >= 0
     """
-    z = 0
+    z = 1
 
     for i in range(n):
         z += i * z
@@ -29,7 +29,7 @@ def factorial(n):
     return z
 
 
-def revrange(a,b):
+def revrange(a, b):
     """
     Returns the tuple (b-1, b-2, ..., a)
 
@@ -41,4 +41,9 @@ def revrange(a,b):
     Parameter b: the "end" of the range
     Precondition: b is an int >= a
     """
-    pass
+    z = ()
+
+    for i in range(a, b):
+        z = (i,) + z
+
+    return z
