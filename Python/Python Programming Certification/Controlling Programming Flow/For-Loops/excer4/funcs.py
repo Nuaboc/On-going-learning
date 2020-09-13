@@ -28,14 +28,9 @@ def skip(s, n):
 
     for i in range(len(s)):
         char = s[i]
-        print(char)
-        pos = s.index(char)
-        print(pos)
+        pos = s.index(char, i)
         if pos % n == 0:
             new_s += s[i]
-            print(new_s)
-
-    print('..........................')
 
     return new_s
 
@@ -56,4 +51,17 @@ def fixed_points(tup):
     Parameter tup: the tuple to copy
     Precondition: tup is a tuple of ints
     """
-    pass
+    new_tup = ()
+
+    for i in range(len(tup)):
+        print('a')
+        x = tup[i]
+        print('b')
+        pos = tup.index(x, i)
+        print('c')
+        if i == x:
+            print('if statement passed')
+            new_tup = new_tup + (tup[i],)
+            print(new_tup)
+
+    return new_tup
