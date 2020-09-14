@@ -25,13 +25,19 @@ def count_inputs():
 
     It will not quit in this case, but it will not add to the counter either.
     """
-    # Create a counter accumulator
-    # Create a variable 'going' to control the loop
-    # While the user has not told us to stop
-        # Get the input from the user
-        # Respond with error message if input is bad
-        # Update counter if input is 'y'
-    pass
+    counter = 0
+    going_on = True
+    while going_on:
+        try:
+            ask = input('Keep going [y/n]? ')
+            if ask == 'y':
+                counter += 1
+            elif ask == 'n':
+                return counter
+            else:
+                z = ask / 1
+        except Exception:
+            print("Answer unclear. Use 'y' or 'n'.")
 
 
 # Script code to test the function
