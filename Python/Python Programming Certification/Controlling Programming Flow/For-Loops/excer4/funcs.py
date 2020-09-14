@@ -54,14 +54,8 @@ def fixed_points(tup):
     new_tup = ()
 
     for i in range(len(tup)):
-        print('a')
         x = tup[i]
-        print('b')
-        pos = tup.index(x, i)
-        print('c')
         if i == x:
-            print('if statement passed')
             new_tup = new_tup + (tup[i],)
-            print(new_tup)
 
     return new_tup
