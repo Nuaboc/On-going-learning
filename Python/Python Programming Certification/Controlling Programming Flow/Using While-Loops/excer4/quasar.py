@@ -6,8 +6,8 @@ maximize your winnings, see
 
     https://masseffect.fandom.com/wiki/Quasar
 
-Author: YOUR NAME HERE
-Date: THE DATE HERE
+Author: Gabriel Martinez
+Date: September 14, 2020
 """
 import random
 random.seed(10)  # remove this line before summiting...
@@ -97,20 +97,21 @@ def get_bet(credits):
     Precondition: credits is an int > 0
     """
     bet = 0
+    flag = True
 
-    try:
-        result = input('Make a bet: ')  # get the number
-        result = int(result)  # convert to float
-        bet = result
-    except:
-        print('the bet must be an integer.')
+    while flag:
+        try:
+            result = input('Make a bet: ')  # get the number
+            bet = int(result)   # convert to integer
+            if 0 < bet <= credits:
+                return bet
+            elif bet <= 0:
+                print('The bet must be a positive integer.')
+            elif bet > credits:
+                print('You do not have enough credits for that bet.')
 
-    if bet <= 0:
-        print('The bet must be a positive integer.')
-    elif bet > credits:
-        print('You do not have enough credits for that bet.')
-
-    return bet
+        except:
+            print('The bet must be an integer.')
 
 
 def session(bet):
@@ -188,5 +189,7 @@ def play(credits):
 
 # Script Code
 # DO NOT MODIFY BELOW THIS LINE
-if __name__ == '__main__':
-    play(1000)
+#if __name__ == '__main__':
+#    play(1000)
+
+get_bet(800)
