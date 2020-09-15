@@ -96,10 +96,7 @@ def get_bet(credits):
     Parameter credits: the number of credits available to bet
     Precondition: credits is an int > 0
     """
-    bet = 0
-    flag = True
-
-    while flag:
+    while True:
         try:
             result = input('Make a bet: ')  # get the number
             bet = int(result)   # convert to integer
@@ -153,7 +150,36 @@ def session(bet):
     Parameter bet: the number of credits bet
     Precondition: bet is an int > 0
     """
-    pass
+    credits = bet
+    score = random.randint(1, 8)
+    print('Your score is ' + str(score) + '.')
+
+    while True:
+        ask = prompt('Choose (a) 4-7, (b) 1-8, or (s)top: ', ['a', 'b', 's'])
+
+        try:
+            if ask == 's' or score >= 20:
+                if score == 20:
+                    print('Quasar!')
+                    print('You won ' + str(credits) + '.')
+                    return payout
+                else:
+                    print('You busted.')
+                    print('You lost ' + str(credits) + '.')
+                    return payout
+            elif ask == 'a':
+                roll = random.randint(4, 7)
+                score += roll
+                print('Your score is ' + str(score) + '.')
+
+            elif ask == 'b':
+                roll = random.randint(1, 8)
+                score += roll
+                print('Your score is ' + str(score) + '.')
+
+
+        except:
+            print()
 
 
 def play(credits):
@@ -192,4 +218,4 @@ def play(credits):
 #if __name__ == '__main__':
 #    play(1000)
 
-get_bet(800)
+session(200)
