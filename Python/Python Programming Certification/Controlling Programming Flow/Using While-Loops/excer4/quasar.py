@@ -153,30 +153,38 @@ def session(bet):
     credits = bet
     score = random.randint(1, 8)
     print('Your score is ' + str(score) + '.')
-
+    
     while True:
         ask = prompt('Choose (a) 4-7, (b) 1-8, or (s)top: ', ['a', 'b', 's'])
 
         try:
-            if ask == 's' or score >= 20:
-                if score == 20:
-                    print('Quasar!')
-                    print('You won ' + str(credits) + '.')
-                    return payout
-                else:
-                    print('You busted.')
-                    print('You lost ' + str(credits) + '.')
-                    return payout
+            if ask == 's':
+                return payout
             elif ask == 'a':
                 roll = random.randint(4, 7)
                 score += roll
                 print('Your score is ' + str(score) + '.')
+                if score == 20:
+                    print('Quasar!')
+                    print('You won ' + str(credits) + '.')
+                    return payout
+                elif score > 20:
+                    print('You busted.')
+                    print('You lost ' + str(credits) + '.')
+                    return payout
 
             elif ask == 'b':
                 roll = random.randint(1, 8)
                 score += roll
                 print('Your score is ' + str(score) + '.')
-
+                if score == 20:
+                    print('Quasar!')
+                    print('You won ' + str(credits) + '.')
+                    return payout
+                elif score > 20:
+                    print('You busted.')
+                    print('You lost ' + str(credits) + '.')
+                    return payout
 
         except:
             print()
@@ -217,5 +225,5 @@ def play(credits):
 # DO NOT MODIFY BELOW THIS LINE
 #if __name__ == '__main__':
 #    play(1000)
-
+# get_bet(200)
 session(200)
