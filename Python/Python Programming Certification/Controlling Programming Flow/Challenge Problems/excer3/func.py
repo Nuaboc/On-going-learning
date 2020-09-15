@@ -45,14 +45,10 @@ def bjack(hand):
     """
     # Hint: Keep track of whether you have seen any aces in the hand that are worth 11
     # If so, subtract 10 from the accumulator if you go over.
-    cards = ('2H', '3H', '4H', '5H', '6H', '7H', '8H', '9H', 'TH', 'JH', 'QH', 'KH', 'AH',
-             '2D', '3D', '4D', '5D', '6D', '7D', '8D', '9D', 'TD', 'JD', 'QD', 'KD', 'AD',
-             '2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', 'TC', 'JC', 'QC', 'KC', 'AC',
-             '2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', 'TS', 'JS', 'QS', 'KS', 'AS',)
     score = 0
     cards_checked = 0
-    aces_on_hand = 0
-    present_card = 0
+    aces_11 = 0
+    current_card = 0
 
     while True:
         print('starting loop')
@@ -64,37 +60,37 @@ def bjack(hand):
             print('all cards checked')
             return score
 
-        if hand[present_card][0] == 'T' or hand[present_card][0] == 'J' or \
-                hand[present_card][0] == 'Q' or hand[present_card][0] == 'K':
-            print(hand[present_card][0])
+        if hand[current_card][0] == 'T' or hand[current_card][0] == 'J' or \
+                hand[current_card][0] == 'Q' or hand[current_card][0] == 'K':
+            print(hand[current_card][0])
             print('conditional for == to # 2-9 or "T, J, Q, or K" passed')
             score += 10
             print(score)
-            if score > 21 and aces_on_hand * -10 == score > 21:
+            if score > 21 and aces_11 > 0:
                 score -= 10
-                aces_on_hand -= 1
+                aces_11 -= 1
                 print(score)
-                print('aces on hand ' + str(aces_on_hand))
-        elif hand[present_card][0] == 'A':
+                print('aces on hand ' + str(aces_11))
+        elif hand[current_card][0] == 'A':
             print('conditional >> present_card == "A" passed')
-            aces_on_hand += 1
-            print(' aces on hand: ' + str(aces_on_hand))
+            print(' aces on hand: ' + str(aces_11))
             if score >= 11:
                 print('need "A" as 1')
                 score += 1
             else:
                 print('need "A" as 11')
                 score += 11
+                aces_11 += 1
 
-            if score > 21 and aces_on_hand > 0:
-                score -= 10
+            #if score > 21 and aces_on_hand > 0:
+                #score -= 10
 
         else:
             print('add card from 2-9 or 10')
-            score += int(hand[present_card][0])
+            score += int(hand[current_card][0])
             print(score)
 
-        present_card += 1
+        current_card += 1
         print(score)
 
 
