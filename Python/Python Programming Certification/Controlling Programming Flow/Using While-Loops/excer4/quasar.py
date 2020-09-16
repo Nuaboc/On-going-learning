@@ -10,7 +10,7 @@ Author: Gabriel Martinez
 Date: September 14, 2020
 """
 import random
-random.seed(10)  # remove this line before summiting...
+random.seed(50)  # remove this line before summiting...
 import introcs
 
 
@@ -150,44 +150,57 @@ def session(bet):
     Parameter bet: the number of credits bet
     Precondition: bet is an int > 0
     """
-    credits = bet
     score = random.randint(1, 8)
     print('Your score is ' + str(score) + '.')
     
     while True:
         ask = prompt('Choose (a) 4-7, (b) 1-8, or (s)top: ', ['a', 'b', 's'])
 
-        try:
-            if ask == 's':
-                return payout
-            elif ask == 'a':
-                roll = random.randint(4, 7)
-                score += roll
-                print('Your score is ' + str(score) + '.')
-                if score == 20:
-                    print('Quasar!')
-                    print('You won ' + str(credits) + '.')
-                    return payout
-                elif score > 20:
-                    print('You busted.')
-                    print('You lost ' + str(credits) + '.')
-                    return payout
+        if ask == 's' and 20 > score > 16:
+            print('You won ' + str(payout(bet, score)) + ' credits.')
+            return payout(bet, score)
 
-            elif ask == 'b':
-                roll = random.randint(1, 8)
-                score += roll
-                print('Your score is ' + str(score) + '.')
-                if score == 20:
-                    print('Quasar!')
-                    print('You won ' + str(credits) + '.')
-                    return payout
-                elif score > 20:
-                    print('You busted.')
-                    print('You lost ' + str(credits) + '.')
-                    return payout
+        elif ask == 's' and score < 17:
+            print('You lost ' + str(payout(bet, score)) + ' credits.')
+            return payout(bet, score)
 
-        except:
-            print()
+        elif ask == 'a':
+            #print('ask == a archived')
+            roll = random.randint(4, 7)
+            #print(roll)
+            score += roll
+            #print(score)
+            print('Your score is ' + str(score) + ' credits.')
+
+            if score == 20:
+                print('Quasar!')
+                print('You won ' + str(payout(bet, score)) + ' credits.')
+                return payout(bet, score)
+
+            elif score > 20:
+                print('You busted.')
+                print('You lost ' + str(payout(bet, score)) + ' credits.')
+                return payout(bet, score)
+
+        elif ask == 'b':
+            #print('ask == b archived')
+            roll = random.randint(1, 8)
+            #print(roll)
+            score += roll
+            #print(score)
+            print('Your score is ' + str(score) + '.')
+
+            if score == 20:
+                #print('score == 20 archived')
+                print('Quasar!')
+                print('You won ' + str(payout(bet, score)) + ' credits.')
+                return payout(bet, score)
+
+            elif score > 20:
+                #print('score > 20 archived')
+                print('You busted.')
+                print('You lost ' + str(payout(bet, score)) + ' credits.')
+                return payout(bet, score)
 
 
 def play(credits):
@@ -218,12 +231,31 @@ def play(credits):
     Parameter credits: the number of credits available to bet
     Precondition: credits is an int > 0
     """
-    pass
+    do_it = True
+    print('You have ' + str(credits) + ' credits.')
+
+    while do_it:
+
+        bet_made = get_bet(credits)
+
+        match = session(bet_made)
+
+        credits += match
+
+        if credits > 0:
+            print('You have ' + str(credits) + ' credits.')
+            ask = prompt('Do you want to (c)ontinue or (p)ayout? ', ('c', 'p'))
+            if ask == 'p':
+                print('You leave with ' + str(credits) + ' credits.')
+                do_it = False
+
+        else:
+            print('You have ' + str(credits) + ' credits.')
+            print('You went broke.')
+            do_it = False
 
 
 # Script Code
 # DO NOT MODIFY BELOW THIS LINE
-#if __name__ == '__main__':
-#    play(1000)
-# get_bet(200)
-session(200)
+if __name__ == '__main__':
+    play(200)
