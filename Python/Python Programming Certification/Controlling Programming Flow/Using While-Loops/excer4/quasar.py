@@ -11,7 +11,7 @@ Date: September 14, 2020
 """
 import random
 random.seed(50)  # remove this line before summiting...
-import introcs
+# import introcs
 
 
 # Do not touch these first two functions. They are finished for you.
