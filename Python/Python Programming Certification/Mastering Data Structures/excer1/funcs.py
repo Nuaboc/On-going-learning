@@ -9,7 +9,7 @@ Data:   August 9, 2019
 import introcs
 
 
-def blend(color1,color2):
+def blend(color1, color2):
     """
     Returns a new color that is the alpha blend of color1 over color2.
 
@@ -23,7 +23,7 @@ def blend(color1,color2):
     """
     gl1 = color1.glColor()
     gl2 = color2.glColor()
-    gl3 = [0,0,0,0]
+    gl3 = [0, 0, 0, 0]
 
     alpha = gl1[3]+gl2[3]*(1-gl1[3])
 
@@ -35,7 +35,7 @@ def blend(color1,color2):
     return introcs.RGB(*gl3)
 
 
-def blendUnder(color1,color2):
+def blendUnder(color1, color2):
     """
     Modifies color1 by alpha-blending it underneath color2.
 
@@ -49,7 +49,7 @@ def blendUnder(color1,color2):
     """
     gl1 = color2.glColor()
     gl2 = color1.glColor()
-    gl3 = [0,0,0,0]
+    gl3 = [0, 0, 0, 0]
 
     alpha = gl1[3]+gl2[3]*(1-gl1[3])
 
@@ -60,5 +60,5 @@ def blendUnder(color1,color2):
 
     color1.red = gl3[0]
     color1.green = gl3[1]
-    color1.blue  = gl3[2]
+    color1.blue = gl3[2]
     color1.alpha = gl3[3]
