@@ -26,7 +26,9 @@ def add_time1(time1, time2):
     Parameter time2: the time to add
     Precondition: time2 is a Time object
     """
-    new_clock = clock.Time(time1.hours + time2.hours, time1.minutes + time2.minutes)
+    x = (time1.minutes + time2.minutes) // 60
+    y = (time1.minutes + time2.minutes) % 60
+    new_clock = clock.Time(time1.hours + time2.hours + x, y)
 
     return new_clock
 
@@ -47,4 +49,7 @@ def add_time2(time1, time2):
     Parameter time2: the time to add
     Precondition: time2 is a Time object
     """
-    pass
+    x = (time1.minutes + time2.minutes) // 60
+    y = (time1.minutes + time2.minutes) % 60
+    time1.hours = time1.hours + time2.hours + x
+    time1.minutes = y
