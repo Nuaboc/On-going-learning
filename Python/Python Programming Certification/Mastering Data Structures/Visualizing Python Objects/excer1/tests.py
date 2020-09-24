@@ -9,7 +9,7 @@ import introcs
 
 
 # Some f values to test
-def add(x,y):
+def add(x, y):
     """
     Returns the sum x+y
 
@@ -21,10 +21,10 @@ def add(x,y):
     Parameter x: The second value to add
     Precondition: x supports addition and x is same type as y
     """
-    return x+y
+    return x + y
 
 
-def sub(x,y):
+def sub(x, y):
     """
     Returns the difference x-y
 
@@ -34,10 +34,10 @@ def sub(x,y):
     Parameter y: The value to subtract
     Precondition: y is a number
     """
-    return x-y
+    return x - y
 
 
-def remove(s1,s2):
+def remove(s1, s2):
     """
     Returns a copy of s, with all characters in s2 removed.
 
@@ -67,23 +67,23 @@ def test_fold_left():
     print('Testing fold_left()')
 
     # Tuple tests
-    result = funcs.fold_left(add,(),3)
-    introcs.assert_equals(3,result)
+    result = funcs.fold_left(add, (), 3)
+    introcs.assert_equals(3, result)
 
-    result = funcs.fold_left(sub,(),2)
-    introcs.assert_equals(2,result)
+    result = funcs.fold_left(sub, (), 2)
+    introcs.assert_equals(2, result)
 
-    result = funcs.fold_left(add,(4,),0)
-    introcs.assert_equals(4,result)
+    result = funcs.fold_left(add, (4,), 0)
+    introcs.assert_equals(4, result)
 
-    result = funcs.fold_left(sub,(4,),0)
-    introcs.assert_equals(-4,result)
+    result = funcs.fold_left(sub, (4,), 0)
+    introcs.assert_equals(-4, result)
 
-    result = funcs.fold_left(sub,(4,),2)
-    introcs.assert_equals(-2,result)
+    result = funcs.fold_left(sub, (4,), 2)
+    introcs.assert_equals(-2, result)
 
-    result = funcs.fold_left(add,(1,2,3,4),0)
-    introcs.assert_equals(10,result)
+    result = funcs.fold_left(add, (1, 2, 3, 4), 0)
+    introcs.assert_equals(10, result)
 
     result = funcs.fold_left(sub,(1,2,3,4),0)
     introcs.assert_equals(-10,result)
@@ -121,36 +121,36 @@ def test_fold_right():
     print('Testing fold_right()')
 
     # Tuple tests
-    result = funcs.fold_right(add,(),3)
-    introcs.assert_equals(3,result)
+    result = funcs.fold_right(add, (), 3)
+    introcs.assert_equals(3, result)
 
-    result = funcs.fold_right(sub,(),2)
-    introcs.assert_equals(2,result)
+    result = funcs.fold_right(sub, (), 2)
+    introcs.assert_equals(2, result)
 
-    result = funcs.fold_right(add,(4,),0)
-    introcs.assert_equals(4,result)
+    result = funcs.fold_right(add, (4,), 0)
+    introcs.assert_equals(4, result)
 
-    result = funcs.fold_right(sub,(4,),0)
-    introcs.assert_equals(4,result)
+    result = funcs.fold_right(sub, (4,), 0)
+    introcs.assert_equals(4, result)
 
-    result = funcs.fold_right(sub,(4,),2)
-    introcs.assert_equals(2,result)
+    result = funcs.fold_right(sub, (4,), 2)
+    introcs.assert_equals(2, result)
 
-    result = funcs.fold_right(add,(1,2,3,4),0)
-    introcs.assert_equals(10,result)
+    result = funcs.fold_right(add, (1, 2, 3, 4), 0)
+    introcs.assert_equals(10, result)
 
-    result = funcs.fold_right(sub,(1,2,3,4),0)
-    introcs.assert_equals(-2,result)
+    result = funcs.fold_right(sub, (1, 2, 3, 4), 0)
+    introcs.assert_equals(-2, result)
 
-    result = funcs.fold_right(sub,(1,-2,3,-4),0)
-    introcs.assert_equals(10,result)
+    result = funcs.fold_right(sub, (1, -2, 3, -4), 0)
+    introcs.assert_equals(10, result)
 
     # String tests
-    result = funcs.fold_right(add,'','A')
-    introcs.assert_equals('A',result)
+    result = funcs.fold_right(add, '', 'A')
+    introcs.assert_equals('A', result)
 
-    result = funcs.fold_right(add,'B','')
-    introcs.assert_equals('B',result)
+    result = funcs.fold_right(add, 'B', '')
+    introcs.assert_equals('B', result)
 
     result = funcs.fold_right(add,'bcdefg','a')
     introcs.assert_equals('bcdefga',result)

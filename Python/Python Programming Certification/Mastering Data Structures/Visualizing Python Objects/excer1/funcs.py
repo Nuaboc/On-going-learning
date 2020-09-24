@@ -9,7 +9,7 @@ Date: September 23, 2020
 """
 
 
-def fold_left(f,seq,value):
+def fold_left(f, seq, value):
     """
     Returns the result of folding f left over seq, starting with value.
 
@@ -35,10 +35,15 @@ def fold_left(f,seq,value):
     Parameter value: the initial starting value
     Precondition: value has the same type as the return type of f
     """
-    pass
+    accum = value
+
+    for i in seq:
+        accum = f(accum, i)
+
+    return accum
 
 
-def fold_right(f,seq,value):
+def fold_right(f, seq, value):
     """
     Returns the result of folding f right over seq, starting with value.
 
@@ -64,4 +69,11 @@ def fold_right(f,seq,value):
     Parameter value: the initial starting value
     Precondition: value has the same type as the return type of f
     """
-    pass
+    accum = value
+    seq_rev = list(seq)
+    seq_rev.reverse()
+
+    for i in seq_rev:
+        accum = f(i, accum)
+
+    return accum
