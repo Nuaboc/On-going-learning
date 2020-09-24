@@ -4,8 +4,8 @@ Functions demonstrating string methods.
 Neither this module nor any of these functions should import the introcs module.
 In addition, you are not allowed to use loops or recursion in either function.
 
-Author: YOUR NAME HERE
-Date: THE DATE HERE
+Author: Gabriel Martinez
+Date: September 23, 2020
 """
 
 
@@ -24,7 +24,11 @@ def first_in_parens(s):
     Parameter s: a string to check
     Precondition: s is a string with a matching pair of parens '()'.
     """
-    pass
+    c = s.find('(') + 1
+    d = s.find(')', c)
+    sub = s[c:d]
+
+    return sub
 
 
 def isnetid(s):
@@ -44,4 +48,17 @@ def isnetid(s):
     Parameter s: the string to check
     Precondition: s is a string
     """
-    pass
+    check1 = s[0:2].isalpha()
+    check2 = s[0:2].islower()
+    check3 = s[2:].isdigit()
+
+    check4 = s[0:3].isalpha()
+    check5 = s[0:3].islower()
+    check6 = s[3:].isdigit()
+
+    if check1 and check2 and check3:
+        return True
+    elif check4 and check5 and check6:
+        return True
+    else:
+        return False

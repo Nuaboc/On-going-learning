@@ -15,22 +15,22 @@ def test_first_in_parens():
     print('Testing first_in_parens()')
 
     result = funcs.first_in_parens('A (B) C')
-    introcs.assert_equals('B',result)
+    introcs.assert_equals('B', result)
 
     result = funcs.first_in_parens('A (B) (C) D')
-    introcs.assert_equals('B',result)
+    introcs.assert_equals('B', result)
 
     result = funcs.first_in_parens('A (B (C) D) E')
-    introcs.assert_equals('B (C',result)
+    introcs.assert_equals('B (C', result)
 
     result = funcs.first_in_parens('A ) B (C) D')
-    introcs.assert_equals('C',result)
+    introcs.assert_equals('C', result)
 
     result = funcs.first_in_parens('A () D')
-    introcs.assert_equals('',result)
+    introcs.assert_equals('', result)
 
     result = funcs.first_in_parens('(A D)')
-    introcs.assert_equals('A D',result)
+    introcs.assert_equals('A D', result)
 
 
 def test_isnetid():
