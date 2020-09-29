@@ -61,28 +61,28 @@ def crossout(table, row, col):
     """
     copy = []
     x = 0
-    y = 0
 
     for d1 in table:  # d1 represents each value in first depp of table.
         print('for d1 in table:')
-        print(x)
+        print(d1)
+        print('x current value is ' + str(x))
 
         if x != row:
             print('if x != row: passed')
             inside = []
+            y = 0
             for d2 in d1:  # d2 represents each value in the second depp in table.
                 print('for d2 in d1:')
-                print(y)
+                print(d2)
+                print('y current value is ' + str(y))
                 if y != col:
                     print('if y != col: passed')
                     inside.append(d2)
                     print(inside)
                 y += 1
-            copy.append(d1)
+            copy.append(inside)
+            print('adding "inside" to "copy"')
+            print(copy)
         x += 1
 
     return copy
-
-
-table1 = [[0.1, 0.3, 0.5], [0.6, 0.2, 0.7], [1.5, 2.3, 0.4]]
-print(crossout(table1, 1, 2))
