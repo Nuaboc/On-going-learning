@@ -60,22 +60,26 @@ def crossout(table, row, col):
     Precondition: col is an index (int) for a column of table
     """
     copy = []
-    table_len = len(table)
+    x = 0
+    y = 0
 
-    for x in range(table_len):   # x represents the indexes of the first dimension of table.
-        print('for x in range(table_len):')
+    for d1 in table:  # d1 represents each value in first depp of table.
+        print('for d1 in table:')
+        print(x)
+
         if x != row:
-            print('if x != row:')
-            for d1 in table:   # d1 represents each value in first depp of table.
-                print('for d1 in table:')
-                inside = []
-                for y in range(len(d1)):   # y represents the indexes of the second dimension inside table.
-                    print('for y in range(len(d1)):')
-                    if y != col:
-                        print('if y != col:')
-                        for d2 in d1:   # d2 represents each value in the second depp in table.
-                            print('for d2 in d1:')
-                            inside.append(d2)
+            print('if x != row: passed')
+            inside = []
+            for d2 in d1:  # d2 represents each value in the second depp in table.
+                print('for d2 in d1:')
+                print(y)
+                if y != col:
+                    print('if y != col: passed')
+                    inside.append(d2)
+                    print(inside)
+                y += 1
+            copy.append(d1)
+        x += 1
 
     return copy
 
