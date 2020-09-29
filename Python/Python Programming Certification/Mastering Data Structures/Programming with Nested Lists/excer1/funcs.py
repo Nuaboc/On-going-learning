@@ -62,27 +62,16 @@ def crossout(table, row, col):
     copy = []
     x = 0
 
-    for d1 in table:  # d1 represents each value in first depp of table.
-        print('for d1 in table:')
-        print(d1)
-        print('x current value is ' + str(x))
+    for d1 in table:  # d1 represents each value in first depth of table.
 
         if x != row:
-            print('if x != row: passed')
             inside = []
             y = 0
-            for d2 in d1:  # d2 represents each value in the second depp in table.
-                print('for d2 in d1:')
-                print(d2)
-                print('y current value is ' + str(y))
+            for d2 in d1:  # d2 represents each value in the second depth of table.
                 if y != col:
-                    print('if y != col: passed')
                     inside.append(d2)
-                    print(inside)
                 y += 1
             copy.append(inside)
-            print('adding "inside" to "copy"')
-            print(copy)
         x += 1
 
     return copy
