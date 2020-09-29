@@ -18,20 +18,20 @@ def test_crossout():
     """
     print('Testing crossout()')
 
-    table = [[0.1,0.3,0.5],[0.6,0.2,0.7],[1.5,2.3,0.4]]
-    result = funcs.crossout(table,1,2)
-    introcs.assert_equals(None,result)
-    introcs.assert_float_lists_equal([[0.1,0.3],[1.5,2.3]],table)
+    table = [[0.1, 0.3, 0.5], [0.6, 0.2, 0.7], [1.5, 2.3, 0.4]]
+    result = funcs.crossout(table, 1, 2)
+    introcs.assert_equals(None, result)
+    introcs.assert_float_lists_equal([[0.1, 0.3], [1.5, 2.3]], table)
 
-    table = [[0.1,0.3,0.5],[0.6,0.2,0.7],[1.5,2.3,0.4]]
-    result = funcs.crossout(table,0,0)
-    introcs.assert_equals(None,result)
-    introcs.assert_float_lists_equal([[0.2,0.7],[2.3,0.4]],table)
+    table = [[0.1, 0.3, 0.5], [0.6, 0.2, 0.7], [1.5, 2.3, 0.4]]
+    result = funcs.crossout(table, 0, 0)
+    introcs.assert_equals(None, result)
+    introcs.assert_float_lists_equal([[0.2, 0.7], [2.3, 0.4]], table)
 
-    table = [[0.1,0.3,0.5],[0.6,0.2,0.7],[1.5,2.3,0.4]]
-    result = funcs.crossout(table,2,1)
-    introcs.assert_equals(None,result)
-    introcs.assert_float_lists_equal([[0.1,0.5],[0.6,0.7]],table)
+    table = [[0.1, 0.3, 0.5], [0.6, 0.2, 0.7], [1.5, 2.3, 0.4]]
+    result = funcs.crossout(table, 2, 1)
+    introcs.assert_equals(None, result)
+    introcs.assert_float_lists_equal([[0.1, 0.5], [0.6, 0.7]], table)
 
     table = [[0.1,0.3,0.5],[0.6,0.2,0.7],[1.5,2.3,0.4],[0.1,0.2,0.3]]
     result = funcs.crossout(table,1,2)

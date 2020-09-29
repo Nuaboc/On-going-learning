@@ -3,8 +3,8 @@ Module demonstrating mutable functions on nested lists.
 
 All of these functions modify their list arguments.
 
-Author: YOUR NAME HERE
-Date: THE DATE HERE
+Author: Gabriel Martinez
+Date: September 29, 2020
 """
 
 
@@ -30,7 +30,27 @@ def crossout(table, row, col):
     Parameter col: the colummn to remove
     Precondition: col is an index (int) for a column of table
     """
-    pass
+    d1 = len(table)
+    print(d1)
+
+    for i in range(d1):
+        print('for loop:')
+        print(i)
+        print('current i value is ' + str(i))
+        if i == row:
+            print('if i == row: passed')
+            table.pop(i)
+            print(table)
+        else:
+            d2 = len(table[i])
+            for u in range(d2):
+                print('for loop:')
+                print(u)
+                print('current u value is ' + str(u))
+                if u == col:
+                    print('if u == col: passed')
+                    table[i].pop(u)
+                    print(table)
 
 
 def place_sums(table):
@@ -58,3 +78,8 @@ def place_sums(table):
     numbers, and (4) each row is the same length.
     """
     pass
+
+
+table1 = [[0.1, 0.3, 0.5], [0.6, 0.2, 0.7], [1.5, 2.3, 0.4]]
+print(crossout(table1, 1, 2))
+print(table1)
