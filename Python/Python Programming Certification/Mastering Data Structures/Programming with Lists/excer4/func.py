@@ -20,12 +20,10 @@ def avg(*args):   # The parameter is MISSING.  Add it back.
     Parameter args: the function arguments
     Precondition: args are all numbers (int or float)
     """
-    average = int
     x = 0
 
     for i in args:
         x += i
-        #print(x)
 
     try:
         average = x / len(args)
@@ -34,10 +32,3 @@ def avg(*args):   # The parameter is MISSING.  Add it back.
         return 0
 
     return average
-
-
-a = []
-for i in range(10, 20):
-    a.append(i)
-print(a)
-avg(a)
