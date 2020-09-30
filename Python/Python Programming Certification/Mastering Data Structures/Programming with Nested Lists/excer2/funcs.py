@@ -30,27 +30,9 @@ def crossout(table, row, col):
     Parameter col: the colummn to remove
     Precondition: col is an index (int) for a column of table
     """
-    d1 = len(table)
-    print(d1)
-
-    for i in range(d1):
-        print('for loop:')
-        print(i)
-        print('current i value is ' + str(i))
-        if i == row:
-            print('if i == row: passed')
-            table.pop(i)
-            print(table)
-        else:
-            d2 = len(table[i])
-            for u in range(d2):
-                print('for loop:')
-                print(u)
-                print('current u value is ' + str(u))
-                if u == col:
-                    print('if u == col: passed')
-                    table[i].pop(u)
-                    print(table)
+    table[:] = table[:row] + table[row + 1:]
+    for d1 in range(len(table)):
+        table[d1] = table[d1][:col] + table[d1][col + 1:]
 
 
 def place_sums(table):
@@ -77,9 +59,13 @@ def place_sums(table):
     contains strings (the headers) (3) each row after the first contains only
     numbers, and (4) each row is the same length.
     """
-    pass
+    table[0].append('Sum')
+    for d1 in range(len(table)):
+        x = 0
+        if d1 == 0:
+            pass
+        else:
+            for d2 in range(len(table[d1])):
+                x += table[d1][d2]
 
-
-table1 = [[0.1, 0.3, 0.5], [0.6, 0.2, 0.7], [1.5, 2.3, 0.4]]
-print(crossout(table1, 1, 2))
-print(table1)
+            table[d1].append(x)

@@ -71,7 +71,7 @@ def test_place_sums():
     table = [['P1','P3','P5','P7','P9'], [0.7, 0.0, -0.7, 1.0, -0.9]]
     answr = [['P1','P3','P5','P7','P9','Sum'], [0.7, 0.0, -0.7, 1.0, -0.9, 0.1]]
     result = funcs.place_sums(table)
-    introcs.assert_equals(None,result)
+    introcs.assert_equals(None, result)
     # Need to check string part and float part separately
     introcs.assert_equals(answr[0],table[0])
     introcs.assert_float_lists_equal(answr[1:],table[1:])
