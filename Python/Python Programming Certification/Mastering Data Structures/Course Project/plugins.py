@@ -14,8 +14,8 @@ for each of them.
 IMPORTANT: It is highly recommended that these functions enforce the preconditions for
 any parameter after images.  Otherwise, command line typos may be hard to debug.
 
-Author: YOUR NAME HERE
-Date: THE DATE HERE
+Author: Gabriel Martinez
+Date: October 2, 2020
 """
 
 
@@ -35,7 +35,7 @@ def display(image):
     Precondition: image is a 2d table of RGB objects
     """
     height = len(image)
-    width  = len(image[0])
+    width = len(image[0])
 
     # Find the maximum string size for padding
     maxsize = 0
@@ -87,7 +87,7 @@ def dered(image):
     """
     # Get the image size
     height = len(image)
-    width  = len(image[0])
+    width = len(image[0])
 
     for row in range(height):
         for col in range(width):
@@ -129,7 +129,7 @@ def mono(image, sepia=False):
     return False
 
 
-def flip(image,vertical=False):
+def flip(image, vertical=False):
     """
     Returns True after reflecting the image horizontally or vertically.
 
@@ -169,7 +169,7 @@ def transpose(image):
     return False
 
 
-def rotate(image,right=False):
+def rotate(image, right=False):
     """
     Returns True after rotating the image left of right by 90 degrees.
 
@@ -222,7 +222,7 @@ def vignette(image):
     return False
 
 
-def blur(image,radius=5):
+def blur(image, radius=5):
     """
     Returns True after bluring the image.
 
@@ -259,8 +259,7 @@ def blur(image,radius=5):
     return False
 
 
-
-def pixellate(image,step=10):
+def pixellate(image, step=10):
     """
     Returns True after pixellating the image.
 

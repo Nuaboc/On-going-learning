@@ -57,16 +57,16 @@ def read_image(file):
     """
     try:
         image = CoreImage.open(file)
-        print(('Loading ' + repr(file)),end='',flush=True)
+        print(('Loading ' + repr(file)),end='', flush=True)
 
         # Extract data from PIL
         image = image.convert("RGBA")
-        width  = image.size[0]
+        width = image.size[0]
         height = image.size[1]
 
         # Poor man's progress bar
         size = width*height
-        block = max(size//PROGRESS,1)
+        block = max(size//PROGRESS, 1)
 
         # This is an iterator.  It allows us to "sync" two sequences in the loop
         source = iter(image.getdata())
@@ -82,7 +82,7 @@ def read_image(file):
 
                 # Update progress bar every block steps
                 if (r*width+c) % block == 0:
-                    print('.',end='',flush=True)
+                    print('.', end='', flush=True)
 
             buffer.append(row)
 
@@ -122,7 +122,7 @@ def verify_image(buffer):
     return True
 
 
-def save_image(buffer,file):
+def save_image(buffer, file):
     """
     Saves the given image buffer to the specified file.
 
@@ -141,14 +141,14 @@ def save_image(buffer,file):
     assert verify_image(buffer), 'A plug-in has corrupted the image data'
     try:
         height = len(buffer)
-        width  = len(buffer[0])
+        width = len(buffer[0])
 
         # Poor man's progress bar
         size = width*height
-        block = max(size//PROGRESS,1)
+        block = max(size//PROGRESS, 1)
 
-        print(('Saving ' + repr(file)),end='',flush=True)
-        im = CoreImage.new('RGBA',(width,height))
+        print(('Saving ' + repr(file)), end='', flush=True)
+        im = CoreImage.new('RGBA', (width, height))
 
         # Convert student data back to PIL format
         output = []
@@ -159,10 +159,10 @@ def save_image(buffer,file):
 
                 # Update progress bar every block steps
                 if (r*width+c) % block == 0:
-                    print('.',end='',flush=True)
+                    print('.', end='', flush=True)
         im.putdata(output)
 
-        im.save(file,'PNG')
+        im.save(file, 'PNG')
         print('done')
     except:
         # This displays error message even though we are not technically crashing
@@ -190,10 +190,10 @@ def parse_args(args):
     options = extract_options(args)
     result = {}
     usage = 'usage: python3 pictool.py command [options] input [output]'
-    if not len(args) in [3,4]:
+    if not len(args) in [3, 4]:
         result['error'] = usage
     else:
-        command = lookup_command(args[1],options)
+        command = lookup_command(args[1], options)
         if type(command) == str:
             result['error'] = command
         else:
@@ -207,7 +207,7 @@ def parse_args(args):
     return result
 
 
-def lookup_command(command,options):
+def lookup_command(command, options):
     """
     Returns the function in plugins matching command, or an error message if not found.
 
@@ -225,11 +225,11 @@ def lookup_command(command,options):
     Parameter options: The function arguments
     Precondition: options is a dictionary
     """
-    if not hasattr(plugins,command):
+    if not hasattr(plugins, command):
         return 'error: unrecognized command '+repr(command)
 
     error = None
-    function = getattr(plugins,command)
+    function = getattr(plugins, command)
     param = function.__code__.co_varnames[:function.__code__.co_argcount]
     dsize = 0 if function.__defaults__ is None else len(function.__defaults__)
     if len(param) != dsize+1:
@@ -240,7 +240,7 @@ def lookup_command(command,options):
             if not key in param:
                 badargs.append(key)
         if badargs:
-            flags = ', '.join(map(lambda x : '--'+x,badargs))
+            flags = ', '.join(map(lambda x: '--'+x, badargs))
             error = 'error: plugin '+repr(command)+' does not recognize the following options: '+flags
 
     return function if error is None else error
@@ -271,7 +271,7 @@ def extract_options(args):
             value = item[split+1:]
 
             # Convert value to a Python type, if possible
-            if value in ['True','False']:
+            if value in ['True', 'False']:
                 value = eval(value)
             elif value.isdigit():
                 value = int(value)
@@ -307,14 +307,14 @@ def main():
         return
 
     start = datetime.datetime.now()
-    print('Processing '+repr(args['input']),end='',flush=True)
-    process = args['command'](buffer,**args['options'])
+    print('Processing '+repr(args['input']), end='', flush=True)
+    process = args['command'](buffer, **args['options'])
     print('..done')
     end = datetime.datetime.now()
     # Uncomment this to see how long it is taking to process images
     print('Time: '+str(end-start))
     if process and 'output' in args:
-        save_image(buffer,args['output'])
+        save_image(buffer, args['output'])
 
 
 # Script code
