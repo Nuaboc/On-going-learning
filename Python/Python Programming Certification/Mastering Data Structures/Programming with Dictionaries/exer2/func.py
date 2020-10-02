@@ -117,19 +117,12 @@ def reports_above_temp(weather, temp):
         for ke in date:   # 2nd dict (ke represents the temperature key as dict)
             t = date[ke]
             if ke == 'temperature':
-                print(ke)   # 'temperature
-                for kv in t:   # 3rd dic (kv represents the items inside temperature)
-                    print(kv)   # value
-                    a = t[kv]   # temp in #
-                    print(a)
-                    if t['units'] == 'F':
-                        print(1)
-                        a = to_celsius(a)
-                        if t[a] > temp:
-                            x += 1
-                    else:   # t['units'] == C
-                        print(2)
-                        if t[a] > temp:
-                            x += 1
+                if t['units'] == 'F':
+                    tn = to_celsius(t['value'])
+                    if tn > temp:
+                        x += 1
+                else:   # t['units'] == C
+                    if t['value'] > temp:
+                        x += 1
 
     return x
