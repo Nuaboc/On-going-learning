@@ -3,8 +3,8 @@ Module demonstrating immutable functions on dictionaries
 
 All of these functions make use of accumulators.
 
-Author: YOUR NAME HERE
-Date: THE DATE HERE
+Author: Gabriel Martinez
+Date: October 1, 2020
 """
 
 
@@ -24,7 +24,18 @@ def average_grade(adict):
     Parameter adict: the dictionary of grades
     Precondition: adict is dictionary mapping strings to ints
     """
-    pass
+    average = 0
+
+    try:
+        for ids in adict:
+            average += adict[ids]
+
+        average = average / len(adict)
+
+    except ZeroDivisionError:
+        pass
+
+    return average
 
 
 def letter_grades(adict):
@@ -46,5 +57,18 @@ def letter_grades(adict):
     Parameter adict: the dictionary of grades
     Precondition: adict is dictionary mapping strings to ints
     """
-    pass
+    new_dict = {}
 
+    for i in adict.items():
+        if i[1] >= 90:
+            new_dict[i[0]] = 'A'
+        elif i[1] >= 80:
+            new_dict[i[0]] = 'B'
+        elif i[1] >= 70:
+            new_dict[i[0]] = 'C'
+        elif i[1] >= 60:
+            new_dict[i[0]] = 'D'
+        else:
+            new_dict[i[0]] = 'F'
+
+    return new_dict
