@@ -29,17 +29,17 @@ def circ_area(**kwd):    # The parameter is MISSING.  Add it back.
     Parameter kwd: the function keyword arguments
     Precondition: the arguments are all numbers (int or float)
     """
-    assert len(kwd) == 1
     area = 0
     pi = math.pi
 
-    if 'radius' in kwd:
+    if 'radius' in kwd and 'diameter' in kwd:
+        assert len(kwd) == 1
+    elif 'radius' in kwd:
         area = pi * kwd['radius'] * kwd['radius']
     elif 'diameter' in kwd:
         x = kwd['diameter'] / 2
         area = pi * x * x
+    else:
+        assert len(kwd) == 1
 
     return area
-
-
-print(circ_area(**{'radius': 3, 'foo': 20, 'bar': 10}))

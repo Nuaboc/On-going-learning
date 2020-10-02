@@ -32,11 +32,13 @@ def test_circ_area():
 
     try:
         func.circ_area(radius=3, diameter=6)
-        introcs.assert_true(False) # We should never reach this line!
+        introcs.assert_true(False)  # We should never reach this line!
     except:
         pass
 
     # Add a test with additional arguments
+    result = func.circ_area(**dict(radius=3, foo=20, bar=10))
+    introcs.assert_floats_equal(28.27433, result)
 
 
 if __name__ == '__main__':
