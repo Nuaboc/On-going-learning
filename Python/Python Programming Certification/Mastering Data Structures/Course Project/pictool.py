@@ -57,7 +57,7 @@ def read_image(file):
     """
     try:
         image = CoreImage.open(file)
-        print(('Loading ' + repr(file)),end='', flush=True)
+        print(('Loading ' + repr(file)), end='', flush=True)
 
         # Extract data from PIL
         image = image.convert("RGBA")

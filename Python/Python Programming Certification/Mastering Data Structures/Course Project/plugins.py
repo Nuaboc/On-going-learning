@@ -125,8 +125,26 @@ def mono(image, sepia=False):
     Precondition: sepia is a bool
     """
     # We recommend enforcing the precondition for sepia
+    assert type(sepia) == bool
+
+    # Get the image size
+    height = len(image)
+    width = len(image[0])
+
+    for row in range(height):
+        for col in range(width):
+            pixel = image[row][col]
+            brightness = 0.3 * pixel.red + 0.6 * pixel.green + 0.1 * pixel.blue
+            if not sepia:  # sepia as False (using greyscale)
+                pixel.red = int(brightness)
+                pixel.green = int(brightness)
+                pixel.blue = int(brightness)
+            elif sepia:  # sepia as True (using sepia)
+                pixel.red = int(brightness)
+                pixel.green = int(0.6 * brightness)
+                pixel.blue = int(0.4 * brightness)
     # Change this to return True when the function is implemented
-    return False
+    return True
 
 
 def flip(image, vertical=False):
@@ -134,7 +152,7 @@ def flip(image, vertical=False):
     Returns True after reflecting the image horizontally or vertically.
 
     All plug-in functions must return True or False.  This function returns True
-    because it modifies the image. By default it reflects the image horizonally,
+    because it modifies the image. By default it reflects the image horizontally,
     or vertically if vertical is True.
 
     Parameter image: The image buffer
@@ -144,8 +162,27 @@ def flip(image, vertical=False):
     Precondition: vertical is a bool
     """
     # We recommend enforcing the precondition for vertical
+    assert type(vertical) == bool
+
+    new_img = None
+
+    # Get the image size
+    height = len(image)
+    width = len(image[0])
+
+    for row in range(height):
+        for col in range(width):
+            pixel = image[row][col]
+            if not vertical:  # vertical as False (flip image horizontally)
+                pixel.red = int(brightness)
+                pixel.green = int(brightness)
+                pixel.blue = int(brightness)
+            elif vertical:  # vertical as True (flip image vertically)
+                pixel.red = int(brightness)
+                pixel.green = int(0.6 * brightness)
+                pixel.blue = int(0.4 * brightness)
     # Change this to return True when the function is implemented
-    return False
+    return True
 
 
 def transpose(image):
