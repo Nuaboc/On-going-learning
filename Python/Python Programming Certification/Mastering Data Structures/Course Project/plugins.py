@@ -124,7 +124,6 @@ def mono(image, sepia=False):
     Parameter sepia: Whether to use sepia tone instead of greyscale
     Precondition: sepia is a bool
     """
-    # We recommend enforcing the precondition for sepia
     assert type(sepia) == bool
 
     # Get the image size
@@ -143,7 +142,7 @@ def mono(image, sepia=False):
                 pixel.red = int(brightness)
                 pixel.green = int(0.6 * brightness)
                 pixel.blue = int(0.4 * brightness)
-    # Change this to return True when the function is implemented
+
     return True
 
 
@@ -161,27 +160,17 @@ def flip(image, vertical=False):
     Parameter vertical: Whether to reflect the image vertically
     Precondition: vertical is a bool
     """
-    # We recommend enforcing the precondition for vertical
     assert type(vertical) == bool
-
-    new_img = None
 
     # Get the image size
     height = len(image)
-    width = len(image[0])
 
-    for row in range(height):
-        for col in range(width):
-            pixel = image[row][col]
-            if not vertical:  # vertical as False (flip image horizontally)
-                pixel.red = int(brightness)
-                pixel.green = int(brightness)
-                pixel.blue = int(brightness)
-            elif vertical:  # vertical as True (flip image vertically)
-                pixel.red = int(brightness)
-                pixel.green = int(0.6 * brightness)
-                pixel.blue = int(0.4 * brightness)
-    # Change this to return True when the function is implemented
+    if not vertical:  # vertical as False (flip image horizontally)
+        for row in range(height):
+            image[row].reverse()
+    elif vertical:  # vertical as True (flip image vertically)
+        image.reverse()
+
     return True
 
 
@@ -202,8 +191,24 @@ def transpose(image):
     Parameter image: The image buffer
     Precondition: image is a 2d table of RGB objects
     """
-    # Change this to return True when the function is implemented
-    return False
+    num_rows = len(image)
+    num_cols = len(image[0])
+
+    new_img = []
+
+    for m in range(num_cols):
+        row = []
+        for n in range(num_rows):
+            row.append(image[n][m])
+
+        new_img.append(row)
+
+    image.clear()
+
+    for row in new_img:
+        image.append(row)
+
+    return True
 
 
 def rotate(image, right=False):
@@ -223,9 +228,16 @@ def rotate(image, right=False):
     Parameter right: Whether to rotate the image right
     Precondition: right is a bool
     """
-    # We recommend enforcing the precondition for right
-    # Change this to return True when the function is implemented
-    return False
+    assert type(right) == bool
+
+    if not right:
+        transpose(image)
+        flip(image, vertical=True)
+    if right:
+        flip(image, vertical=True)
+        transpose(image)
+
+    return True
 
 
 # ADVANCED OPTIONAL FUNCTIONS
