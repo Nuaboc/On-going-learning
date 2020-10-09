@@ -41,7 +41,7 @@ def test_read_csv():
     parent = os.path.split(__file__)[0]
 
     # First test
-    fpath  = os.path.join(parent,'files', 'files/readcsv1.csv')
+    fpath = os.path.join(parent, 'files', 'readcsv1.csv')
     table = func.read_csv(fpath)
 
     introcs.assert_equals(type(table), list)
@@ -50,7 +50,7 @@ def test_read_csv():
     introcs.assert_equals(table, FILE1)
 
     # Second test
-    fpath  = os.path.join(parent,'files', 'files/readcsv2.csv')
+    fpath = os.path.join(parent, 'files', 'readcsv2.csv')
     table = func.read_csv(fpath)
 
     introcs.assert_equals(type(table), list)
