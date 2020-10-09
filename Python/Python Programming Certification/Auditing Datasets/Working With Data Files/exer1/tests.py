@@ -72,7 +72,7 @@ def test_write_numbers():
     actual  =  file.read()
     file.close()
 
-    file = open(os.path.join(parent,'files','writefile2.txt'))
+    file = open(os.path.join(parent, 'files', 'writefile2.txt'))
     correct = file.read()
     file.close()
 

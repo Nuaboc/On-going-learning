@@ -44,13 +44,12 @@ def write_numbers(filepath, n):
     """
     file = open(filepath, 'w')
     x = 0
-    file.write(str(x))
 
     for i in range(n):
-        print('here')
-        x += 1
-        file.write('\n' + str(x))
-
-    print('line 54')
+        if i == n - 1:
+            file.write(str(x))
+        else:
+            file.write(str(x) + '\n')
+            x += 1
 
     file.close()
