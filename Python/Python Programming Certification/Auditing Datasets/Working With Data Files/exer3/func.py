@@ -9,7 +9,7 @@ Date: THE DATE HERE
 import csv
 
 
-def write_csv(data,filename):
+def write_csv(data, filename):
     """
     Writes the given data out as a CSV file filename.
 
@@ -25,4 +25,10 @@ def write_csv(data,filename):
     Precondition: filename is a string representing a path to a file with extension
     .csv or .CSV.  The file may or may not exist.
     """
-    pass                    # Implement this function
+    file = open(filename, 'w', newline='')
+    wrapper = csv.writer(file)
+
+    for row in range(len(data)):
+        wrapper.writerow(data[row])
+
+    file.close()

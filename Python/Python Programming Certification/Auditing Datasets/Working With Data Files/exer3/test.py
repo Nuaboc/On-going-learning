@@ -40,42 +40,42 @@ def test_write_csv():
     parent = os.path.split(__file__)[0]
 
     # First test (erase any existing file)
-    fpath  = os.path.join(parent,'files','temp1.csv')
-    open(fpath,'w').close()
-    func.write_csv(FILE1,fpath)
+    fpath = os.path.join(parent, 'files', 'temp1.csv')
+    open(fpath, 'w').close()
+    func.write_csv(FILE1, fpath)
 
     # Check file was created
     introcs.assert_true(os.path.exists(fpath))
 
     file = open(fpath)
-    actual  =  file.read()
+    actual = file.read()
     file.close()
 
-    file = open(os.path.join(parent,'files','writecsv1.csv'))
+    file = open(os.path.join(parent, 'files', 'writecsv1.csv'))
     correct = file.read()
     file.close()
 
     # Check to see if they are the same
-    introcs.assert_equals(correct,actual)
+    introcs.assert_equals(correct, actual)
 
     # Second test (erase any existing file)
-    fpath  = os.path.join(parent,'files','temp2.csv')
-    open(fpath,'w').close()
-    func.write_csv(FILE2,fpath)
+    fpath = os.path.join(parent, 'files', 'temp2.csv')
+    open(fpath, 'w').close()
+    func.write_csv(FILE2, fpath)
 
     # Check file was created
     introcs.assert_true(os.path.exists(fpath))
 
     file = open(fpath)
-    actual  =  file.read()
+    actual = file.read()
     file.close()
 
-    file = open(os.path.join(parent,'files','writecsv2.csv'))
+    file = open(os.path.join(parent, 'files', 'writecsv2.csv'))
     correct = file.read()
     file.close()
 
     # Check to see if they are the same
-    introcs.assert_equals(correct,actual)
+    introcs.assert_equals(correct, actual)
 
 
 if __name__ == '__main__':
