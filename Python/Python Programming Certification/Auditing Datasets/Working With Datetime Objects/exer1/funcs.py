@@ -2,7 +2,7 @@
 Functions for working with datetime objects.
 
 Author: Gabriel Martinez
-Date:   DATE FINISHED H
+Date: October 12, 2020
 """
 import datetime
 
@@ -17,11 +17,14 @@ def christmas_day(year):
     Parameter year: The year to check for Christmas
     Precondition: years is an int > 0 (and a year using the Gregorian calendar)
     """
-    # HINT: Make a date object and use the isoweekday method
-    pass                    # Implement this function
+    date = datetime.date(year, 12, 25)
+
+    iso_day = date.isoweekday()
+
+    return iso_day
 
 
-def iso_str(d,t):
+def iso_str(d, t):
     """
     Returns the ISO formatted string of data and time together.
 
@@ -33,5 +36,8 @@ def iso_str(d,t):
     Parameter t: The time of day
     Precondition: t is a time object
     """
-    # HINT: Combine date and time into a datetime and use isoformat
-    pass                    # Implement this function
+    date = datetime.datetime(d.year, d.month, d.day, t.hour, t.minute, t.second, t.microsecond)
+
+    iso_f = date.isoformat()
+
+    return iso_f
