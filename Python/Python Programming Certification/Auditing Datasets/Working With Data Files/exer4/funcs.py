@@ -54,7 +54,7 @@ def write_json(data, filename):
     """
     file = open(filename, 'w')
 
-    info = json.dumps(data)
+    info = json.dumps(data, indent=4)
     file.write(info)
 
     file.close()
