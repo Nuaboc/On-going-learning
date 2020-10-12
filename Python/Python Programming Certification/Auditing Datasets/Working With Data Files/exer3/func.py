@@ -3,8 +3,8 @@ Module with a function to write CSV files (using data in a 2D list)
 
 This function will be used in the main project.  You should hold on to it.
 
-Author: YOUR NAME HERE
-Date: THE DATE HERE
+Author: Gabriel Martinez
+Date: October 11, 2020
 """
 import csv
 

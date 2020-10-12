@@ -171,15 +171,15 @@ def test_read_json():
     parent = os.path.split(__file__)[0]
 
     # First test
-    fpath = os.path.join(parent,'files','readjson1.json')
-    data  = funcs.read_json(fpath)
+    fpath = os.path.join(parent, 'files', 'readjson1.json')
+    data = funcs.read_json(fpath)
 
     introcs.assert_equals(type(data), dict)
     introcs.assert_equals(data, FILE1)
 
     # Second test
-    fpath  = os.path.join(parent,'files','readjson2.json')
-    data  = funcs.read_json(fpath)
+    fpath = os.path.join(parent, 'files', 'readjson2.json')
+    data = funcs.read_json(fpath)
 
     introcs.assert_equals(type(data), list)
     introcs.assert_equals(data, FILE2)
@@ -195,46 +195,46 @@ def test_write_json():
     parent = os.path.split(__file__)[0]
 
     # First test (erase any existing file)
-    fpath  = os.path.join(parent,'files','temp1.json')
-    open(fpath,'w').close()
-    funcs.write_json(FILE1,fpath)
+    fpath = os.path.join(parent, 'files', 'temp1.json')
+    open(fpath, 'w').close()
+    funcs.write_json(FILE1, fpath)
 
     # Check file was created
     introcs.assert_true(os.path.exists(fpath))
 
     file = open(fpath)
-    actual  =  file.read()
+    actual = file.read()
     file.close()
 
-    file = open(os.path.join(parent,'files','readjson1.json'))
+    file = open(os.path.join(parent, 'files', 'readjson1.json'))
     correct = file.read()
     file.close()
 
     # Check to see if they are the same WITHOUT indentation
-    introcs.assert_equals(unindent_json(correct),unindent_json(actual))
+    introcs.assert_equals(unindent_json(correct), unindent_json(actual))
     # Check to see if they are the same WITH indentation
-    introcs.assert_equals(correct,actual)
+    introcs.assert_equals(correct, actual)
 
     # Second test (erase any existing file)
-    fpath  = os.path.join(parent,'files','temp2.json')
-    open(fpath,'w').close()
-    funcs.write_json(FILE2,fpath)
+    fpath = os.path.join(parent, 'files', 'temp2.json')
+    open(fpath, 'w').close()
+    funcs.write_json(FILE2, fpath)
 
     # Check file was created
     introcs.assert_true(os.path.exists(fpath))
 
     file = open(fpath)
-    actual  =  file.read()
+    actual = file.read()
     file.close()
 
-    file = open(os.path.join(parent,'files','readjson2.json'))
+    file = open(os.path.join(parent, 'files', 'readjson2.json'))
     correct = file.read()
     file.close()
 
     # Check to see if they are the same WITHOUT indentation
-    introcs.assert_equals(unindent_json(correct),unindent_json(actual))
+    introcs.assert_equals(unindent_json(correct), unindent_json(actual))
     # Check to see if they are the same WITH indentation
-    introcs.assert_equals(correct,actual)
+    introcs.assert_equals(correct, actual)
 
 
 if __name__ == '__main__':
