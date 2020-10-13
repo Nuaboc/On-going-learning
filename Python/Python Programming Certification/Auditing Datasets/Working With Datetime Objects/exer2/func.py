@@ -2,7 +2,7 @@
 A simple function comparing datetime objects.
 
 Author: Gabriel Martinez
-Date:   DATE FINISHED HERE
+Date: October 13, 2020
 """
 import datetime
 
@@ -20,7 +20,6 @@ def is_before(d1, d2):
     Parameter d2: The first event
     Precondition: d2 is EITHER a date object or a datetime object
     """
-    # HINT: Check the type of d1 or d2. If not a datetime, convert it for comparison
     if type(d1) == type(d2):
         if d1 < d2:
             check = True
@@ -35,7 +34,7 @@ def is_before(d1, d2):
                 check = False
 
         except AttributeError:
-            if d1 < d2.date():   # Need to compare all day with specific hours
+            if d1 == d2.date() or d1 < d2.date():
                 check = True
             else:
                 check = False
