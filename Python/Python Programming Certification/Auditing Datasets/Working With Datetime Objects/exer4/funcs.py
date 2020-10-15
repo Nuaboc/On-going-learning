@@ -5,7 +5,7 @@ While these functions are similar to functions found in the assignment, they
 are missing timezone information.  The next exercise will modify these
 functions to make them compatible with the assignment.
 
-Author: YOUR NAME HERE
+Author: Gabriel Martinez
 Date:   DATE FINISHED HERE
 """
 
@@ -25,7 +25,7 @@ def str_to_time(timestamp):
     pass                    # Implement this function
 
 
-def sunset(date,daycycle):
+def sunset(date, daycycle):
     """
     Returns the sunset datetime (day and time) for the given date
 
@@ -61,4 +61,3 @@ def sunset(date,daycycle):
     # HINT: ISO FORMAT IS 'yyyy-mm-ddThh:mm'.  For the sunrise value, construct a
     # string in ISO format and call str_to_time.
     pass                    # Implement this function
-

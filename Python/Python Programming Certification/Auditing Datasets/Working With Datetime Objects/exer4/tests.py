@@ -17,7 +17,7 @@ def test_str_to_time():
     """
     print('Testing str_to_time()')
 
-    d = datetime.datetime(2016,4,15)
+    d = datetime.datetime(2016, 4, 15)
     result = funcs.str_to_time('2016-04-15')
     introcs.assert_equals(datetime.datetime,type(result))
     introcs.assert_equals(d,result)

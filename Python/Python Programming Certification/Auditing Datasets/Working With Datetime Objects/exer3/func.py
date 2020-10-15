@@ -2,7 +2,7 @@
 A simple function computing time elapsed
 
 Author: Gabriel Martinez
-Date:   DATE FINIS
+Date:   October 15, 2020
 """
 import datetime
 
@@ -23,33 +23,22 @@ def past_a_week(d1, d2):
     """
     # HINT: Check the type of d1 or d2. If not a datetime, convert it for comparison
     delta = datetime.timedelta(days=7)
+
     if type(d1) == type(d2):
-        print('if from line 26')
-        if d2 - d1 == delta:
-            print('if from line 28')
+        if d2 - d1 >= delta:
             check = True
         else:
-            print('else from line 31')
             check = False
     else:
-        print('else from line 34')
         try:
-            print('on try')
-            if d2.date() - d1 == delta:
-                print('if from line 38')
+            if d2.date() - d1 >= delta:
                 check = True
             else:
-                print('else from line 41')
                 check = False
         except AttributeError:
-            print('exception')
-            if d2 - d1.date() == delta:
-                print('if from line 46')
+            if d2 - d1.date() >= delta:
                 check = True
             else:
-                print('else from line 49')
                 check = False
 
-    print(str(delta))
-    return delta
-
+    return check
