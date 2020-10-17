@@ -21,8 +21,12 @@ def str_to_time(timestamp):
     Parameter timestamp: The time stamp to convert
     Precondition: timestamp is a string
     """
-    # Hint: Use a try-except to return None if parsing fails
-    pass                    # Implement this function
+    from dateutil.parser import parse
+
+    try:
+        return parse(timestamp)
+    except ValueError:
+        return None
 
 
 def sunset(date, daycycle):
@@ -60,4 +64,5 @@ def sunset(date, daycycle):
     """
     # HINT: ISO FORMAT IS 'yyyy-mm-ddThh:mm'.  For the sunrise value, construct a
     # string in ISO format and call str_to_time.
-    pass                    # Implement this function
+
+    return ssdt
