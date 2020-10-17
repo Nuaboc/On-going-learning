@@ -6,7 +6,7 @@ are missing timezone information.  The next exercise will modify these
 functions to make them compatible with the assignment.
 
 Author: Gabriel Martinez
-Date:   DATE FINISHED HERE
+Date:   October 17, 2020
 """
 
 
@@ -64,5 +64,14 @@ def sunset(date, daycycle):
     """
     # HINT: ISO FORMAT IS 'yyyy-mm-ddThh:mm'.  For the sunrise value, construct a
     # string in ISO format and call str_to_time.
+    from datetime import datetime
+    iso_f = date.isoformat()
+    m = iso_f[5:7]
+    d = iso_f[8:]
 
-    return ssdt
+    for d1 in daycycle.keys():
+        if d1 == str(date.year):
+            for d2 in daycycle[d1].keys():
+                if d2 == m + '-' + d:
+                    time = daycycle[d1][d2]['sunset']
+                    return datetime(date.year, date.month, date.day, int(time[0:2]), int(time[3:]))
