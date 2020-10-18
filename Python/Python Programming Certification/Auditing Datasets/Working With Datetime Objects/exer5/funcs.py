@@ -93,16 +93,25 @@ def daytime(time, daycycle):
     # HINT: ISO FORMAT IS 'yyyy-mm-ddThh:mm'.  For the sunrise value, construct a
     # string in ISO format and call str_to_time.
     print('new test')
-    date = time
+
     from datetime import datetime
-    iso_f = date.isoformat()
+    iso_f = time.isoformat()
     m = iso_f[5:7]
-    d = iso_f[8:]
+    d = iso_f[8:10]
+    h = iso_f[11:13]
+    minute = iso_f[14:15]
 
     for d1 in daycycle.keys():
-        if d1 == str(date.year):
+        if d1 == str(time.year):
+            print('if d1 == str(time.year)')
             for d2 in daycycle[d1].keys():
                 if d2 == m + '-' + d:
-                    time = daycycle[d1][d2]['sunset']
-                    return datetime(date.year, date.month, date.day, int(time[0:2]), int(time[3:]))
+                    print('if d2 == m + ...')
+                    ss = daycycle[d1][d2]['sunset']
+                    sr = daycycle[d1][d2]['sunrise']
+                    if int(sr[0:2]) < int(h) < int(ss[0:2]):
+                        return True
 
+                    else:
+                        # if int(h) == int(sr[0:2]) and int(sr[3:5]) < int(minute) < int(ss[3:5]):
+                        pass
