@@ -4,7 +4,7 @@ Functions for parsing time values and determining daylight hours.
 Both of these functions will be used in the main project.  You should hold on to them.
 
 Author: Gabriel Martinez
-Date: October 17, 2020
+Date: October 18, 2020
 """
 from dateutil.parser import parse
 
@@ -113,5 +113,6 @@ def daytime(time, daycycle):
                         return True
 
                     else:
+                        # verificar los timezones
                         # if int(h) == int(sr[0:2]) and int(sr[3:5]) < int(minute) < int(ss[3:5]):
                         pass

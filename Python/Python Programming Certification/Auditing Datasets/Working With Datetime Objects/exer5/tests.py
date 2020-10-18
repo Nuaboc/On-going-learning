@@ -67,15 +67,15 @@ def test_daytime():
     daycycle = json.loads(file.read())
     file.close()
 
-    times = [('2015-06-05T07:00:00',True,True),  ('2015-06-05T17:00:00',True,True),
-             ('2015-10-31T06:00:00',False,True), ('2015-10-31T17:00:00',True,False),
-             ('2015-11-17T07:00:00',True,True),  ('2015-11-17T17:00:00',False,False),
-             ('2015-12-11T07:00:00',False,True), ('2015-06-05T17:00:00',True,True),
-             ('2016-11-01T07:00:00',True,True),  ('2016-11-01T17:00:00',False,False),
-             ('2017-11-17T07:00:00',False,True), ('2017-11-17T17:00:00',False,False),
-             ('2018-06-05T07:00:00',True,True),  ('2018-06-05T17:00:00',True,True),
-             ('2018-11-15T07:00:00',True,True),  ('2018-11-15T17:00:00',False,False),
-             ('2019-11-15T07:00:00',True,True),  ('2019-11-15T17:00:00',False,False)]
+    times = [('2015-06-05T07:00:00', True, True),  ('2015-06-05T17:00:00', True, True),
+             ('2015-10-31T06:00:00', False, True), ('2015-10-31T17:00:00', True, False),
+             ('2015-11-17T07:00:00', True, True),  ('2015-11-17T17:00:00', False, False),
+             ('2015-12-11T07:00:00', False, True), ('2015-06-05T17:00:00', True, True),
+             ('2016-11-01T07:00:00', True, True),  ('2016-11-01T17:00:00', False, False),
+             ('2017-11-17T07:00:00', False, True), ('2017-11-17T17:00:00', False, False),
+             ('2018-06-05T07:00:00', True, True),  ('2018-06-05T17:00:00', True, True),
+             ('2018-11-15T07:00:00', True, True),  ('2018-11-15T17:00:00', False, False),
+             ('2019-11-15T07:00:00', True, True),  ('2019-11-15T17:00:00', False, False)]
 
     # CHECK THE TEST CASES
     for time in times:
