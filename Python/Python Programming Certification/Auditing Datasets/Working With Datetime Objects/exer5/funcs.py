@@ -3,12 +3,13 @@ Functions for parsing time values and determining daylight hours.
 
 Both of these functions will be used in the main project.  You should hold on to them.
 
-Author: YOUR NAME HERE
-Date:   DATE FINISHED HERE
+Author: Gabriel Martinez
+Date: October 17, 2020
 """
+from dateutil.parser import parse
 
 
-def str_to_time(timestamp,tz=None):
+def str_to_time(timestamp, tz=None):
     """
     Returns the datetime object for the given timestamp (or None if stamp is invalid)
 
@@ -18,7 +19,7 @@ def str_to_time(timestamp,tz=None):
 
     If the timestamp has a timezone, then it should keep that timezone even if
     the value for tz is not None.  Otherwise, if timestamp has no timezone and
-    tz if not None, this this function will assign that timezone to the datetime
+    tz if not None, this function will assign that timezone to the datetime
     object.
 
     The value for tz can either be a string or a time OFFSET. If it is a string,
@@ -34,15 +35,27 @@ def str_to_time(timestamp,tz=None):
     """
     # HINT: Use the code from the previous exercise and update the timezone
     # Use localize if timezone is a string; otherwise replace the timezone if not None
-    pass                    # Implement this function
+    from pytz import timezone
+    parsed = parse(timestamp)
+
+    try:
+        if parsed.tzinfo is None and tz is not None:
+            if type(tz) == str:
+                return timezone(tz).localize(parsed)
+            else:
+                return parsed.replace(tzinfo=tz)
+        else:
+            return parse(timestamp)
+    except ValueError:
+        return None
 
 
-def daytime(time,daycycle):
+def daytime(time, daycycle):
     """
     Returns true if the time takes place during the day.
 
     A time is during the day if it is after sunrise but before sunset, as
-    indicated by the daycycle dicitionary.
+    indicated by the daycycle dictionary.
 
     A daycycle dictionary has keys for several years (as int).  The value for
     each year is also a dictionary, taking strings of the form 'mm-dd'.  The
@@ -77,5 +90,19 @@ def daytime(time,daycycle):
     """
     # HINT: Use the code from the previous exercise to get sunset AND sunrise
     # Add a timezone to time if one is missing (the one from the daycycle)
-    pass                    # Implement this function
+    # HINT: ISO FORMAT IS 'yyyy-mm-ddThh:mm'.  For the sunrise value, construct a
+    # string in ISO format and call str_to_time.
+    print('new test')
+    date = time
+    from datetime import datetime
+    iso_f = date.isoformat()
+    m = iso_f[5:7]
+    d = iso_f[8:]
+
+    for d1 in daycycle.keys():
+        if d1 == str(date.year):
+            for d2 in daycycle[d1].keys():
+                if d2 == m + '-' + d:
+                    time = daycycle[d1][d2]['sunset']
+                    return datetime(date.year, date.month, date.day, int(time[0:2]), int(time[3:]))
 

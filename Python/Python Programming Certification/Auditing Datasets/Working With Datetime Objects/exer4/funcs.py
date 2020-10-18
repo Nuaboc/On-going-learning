@@ -6,7 +6,7 @@ are missing timezone information.  The next exercise will modify these
 functions to make them compatible with the assignment.
 
 Author: Gabriel Martinez
-Date:   October 17, 2020
+Date: October 17, 2020
 """
 
 

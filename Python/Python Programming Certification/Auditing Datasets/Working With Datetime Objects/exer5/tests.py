@@ -19,37 +19,37 @@ def test_str_to_time():
     from dateutil.parser import parse
     from pytz import timezone
 
-    input  = '2016-05-12'
+    input = '2016-05-12'
     result = funcs.str_to_time(input)
-    introcs.assert_equals(parse(input),result)
+    introcs.assert_equals(parse(input), result)
 
-    input  = '16:23'
+    input = '16:23'
     result = funcs.str_to_time(input)
-    introcs.assert_equals(parse(input),result)
+    introcs.assert_equals(parse(input), result)
 
-    input   = '16:23-4:00'
+    input = '16:23-4:00'
     result = funcs.str_to_time(input)
-    introcs.assert_equals(parse(input),result)
+    introcs.assert_equals(parse(input), result)
 
-    input   = '2016-05-12T16:23-4:00'
+    input = '2016-05-12T16:23-4:00'
     result = funcs.str_to_time(input)
-    introcs.assert_equals(parse(input),result)
+    introcs.assert_equals(parse(input), result)
 
-    input   = '2016-05-12T16:23'
+    input = '2016-05-12T16:23'
     correct = parse(input+'-4:00')
-    result  = funcs.str_to_time(input,correct.tzinfo)
-    introcs.assert_equals(correct,result)
-
-    input   = '2016-05-12T16:23'
-    correct = parse(input+'-5:00')
-    offset  =  parse(input+'-4:00')
-    result  = funcs.str_to_time(input+'-5:00',offset)
+    result = funcs.str_to_time(input, correct.tzinfo)
     introcs.assert_equals(correct, result)
 
-    input   = '2016-05-12T16:23'
+    input = '2016-05-12T16:23'
+    correct = parse(input+'-5:00')
+    offset = parse(input+'-4:00')
+    result = funcs.str_to_time(input+'-5:00', offset)
+    introcs.assert_equals(correct, result)
+
+    input = '2016-05-12T16:23'
     central = 'America/Chicago'
     correct = timezone(central).localize(parse(input))
-    result  =  funcs.str_to_time(input,central)
+    result = funcs.str_to_time(input, central)
     introcs.assert_equals(correct, result)
 
 
@@ -79,12 +79,12 @@ def test_daytime():
 
     # CHECK THE TEST CASES
     for time in times:
-        act  = funcs.str_to_time(time[0],"America/New_York")
-        day  = funcs.daytime(act,daycycle)
+        act = funcs.str_to_time(time[0], "America/New_York")
+        day = funcs.daytime(act, daycycle)
         introcs.assert_equals(time[1], day)
 
-        act  = funcs.str_to_time(time[0],"America/Chicago")
-        day  = funcs.daytime(act,daycycle)
+        act = funcs.str_to_time(time[0], "America/Chicago")
+        day = funcs.daytime(act, daycycle)
         introcs.assert_equals(time[2], day)
 
 
