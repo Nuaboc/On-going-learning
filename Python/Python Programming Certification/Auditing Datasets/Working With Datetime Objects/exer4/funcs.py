@@ -62,8 +62,7 @@ def sunset(date, daycycle):
     Parameter daycycle: The daycycle dictionary
     Precondition: daycycle is a valid daycycle dictionary, as described above
     """
-    # HINT: ISO FORMAT IS 'yyyy-mm-ddThh:mm'.  For the sunrise value, construct a
-    # string in ISO format and call str_to_time.
+    # HINT: ISO FORMAT IS 'yyyy-mm-ddThh:mm'.
     from datetime import datetime
     iso_f = date.isoformat()
     m = iso_f[5:7]

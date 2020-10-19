@@ -7,6 +7,7 @@ Author: Gabriel Martinez
 Date: October 18, 2020
 """
 from dateutil.parser import parse
+from pytz import timezone
 
 
 def str_to_time(timestamp, tz=None):
@@ -35,10 +36,10 @@ def str_to_time(timestamp, tz=None):
     """
     # HINT: Use the code from the previous exercise and update the timezone
     # Use localize if timezone is a string; otherwise replace the timezone if not None
-    from pytz import timezone
-    parsed = parse(timestamp)
 
     try:
+        parsed = parse(timestamp)
+
         if parsed.tzinfo is None and tz is not None:
             if type(tz) == str:
                 return timezone(tz).localize(parsed)
@@ -88,31 +89,20 @@ def daytime(time, daycycle):
     Parameter daycycle: The daycycle dictionary
     Precondition: daycycle is a valid daycycle dictionary, as described above
     """
-    # HINT: Use the code from the previous exercise to get sunset AND sunrise
-    # Add a timezone to time if one is missing (the one from the daycycle)
-    # HINT: ISO FORMAT IS 'yyyy-mm-ddThh:mm'.  For the sunrise value, construct a
-    # string in ISO format and call str_to_time.
-    print('new test')
+    iso_f = time.isoformat()  # This method return a string
+    month = iso_f[5:7]  # a string with the month of 'time' as two digits
+    day = iso_f[8:10]  # a string with the day of 'time' as two digits
+    dict_tz = timezone(daycycle['timezone'])
 
-    from datetime import datetime
-    iso_f = time.isoformat()
-    m = iso_f[5:7]
-    d = iso_f[8:10]
-    h = iso_f[11:13]
-    minute = iso_f[14:15]
-
-    for d1 in daycycle.keys():
+    for d1 in daycycle.keys():  # looping through the first depth of the daycycle dict
         if d1 == str(time.year):
-            print('if d1 == str(time.year)')
-            for d2 in daycycle[d1].keys():
-                if d2 == m + '-' + d:
-                    print('if d2 == m + ...')
-                    ss = daycycle[d1][d2]['sunset']
-                    sr = daycycle[d1][d2]['sunrise']
-                    if int(sr[0:2]) < int(h) < int(ss[0:2]):
+            for d2 in daycycle[d1].keys():  # looping through the second depth of the daycycle dict
+                if d2 == month + '-' + day:
+                    sr = daycycle[d1][d2]['sunrise']  # a string of the hour and minutes of the sunrise
+                    ss = daycycle[d1][d2]['sunset']  # a string of the hour and minutes of the sunset
+                    sunrise = dict_tz.localize(str_to_time(d1 + '-' + d2 + 'T' + sr))
+                    sunset = dict_tz.localize(str_to_time(d1 + '-' + d2 + 'T' + ss))
+                    if sunrise < time < sunset:
                         return True
-
                     else:
-                        # verificar los timezones
-                        # if int(h) == int(sr[0:2]) and int(sr[3:5]) < int(minute) < int(ss[3:5]):
-                        pass
+                        return False

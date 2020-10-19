@@ -62,7 +62,7 @@ def test_daytime():
     # Find the directory with this file in it
     parent = os.path.split(__file__)[0]
 
-    filepath = os.path.join(parent,'daycycle.json')
+    filepath = os.path.join(parent, 'daycycle.json')
     file = open(filepath)
     daycycle = json.loads(file.read())
     file.close()
