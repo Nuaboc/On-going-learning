@@ -10,11 +10,13 @@ the functions simpler (because the preconditions ensure we have less to worry ab
 enforcing these preconditions can be quite hard. That is why it is not necessary to 
 enforce any of the preconditions in this module.
 
-Author: YOUR NAME HERE
-Date: THE DATE HERE
+Author: Gabriel Martinez
+Date: October 19, 2020
 """
 import csv
 import json
+from dateutil.parser import parse
+from pytz import timezone
 
 
 def read_csv(filename):
@@ -30,10 +32,22 @@ def read_csv(filename):
     Precondition: filename is a string, referring to a file that exists, and that file 
     is a valid CSV file
     """
-    pass                    # Implement this function
+    content = []
+    file = open(filename)
+    wrapper = csv.reader(file)
+
+    for row in wrapper:
+        line = []
+        for li in row:
+            line.append(li)
+        content.append(line)
+
+    file.close()
+
+    return content
 
 
-def write_csv(data,filename):
+def write_csv(data, filename):
     """
     Writes the given data out as a CSV file filename.
     
@@ -49,7 +63,13 @@ def write_csv(data,filename):
     Precondition: filename is a string representing a path to a file with extension
     .csv or .CSV.  The file may or may not exist.
     """
-    pass                    # Implement this function
+    file = open(filename, 'w', newline='')
+    wrapper = csv.writer(file)
+
+    for row in range(len(data)):
+        wrapper.writerow(data[row])
+
+    file.close()
 
 
 def read_json(filename):
@@ -64,10 +84,15 @@ def read_json(filename):
     Precondition: filename is a string, referring to a file that exists, and that file 
     is a valid JSON file
     """
-    pass                    # Implement this function
+    file = open(filename)
+    data = file.read()
+    content = json.loads(data)
+    file.close()
+
+    return content
 
 
-def str_to_time(timestamp,tz=None):
+def str_to_time(timestamp, tz=None):
     """
     Returns the datetime object for the given timestamp (or None if stamp is invalid)
     
@@ -91,12 +116,21 @@ def str_to_time(timestamp,tz=None):
     Precondition: tz is either None, a string naming a valid time zone,
     or a time zone OFFSET.
     """
-    # HINT: Use the code from the previous exercise and update the timezone
-    # Use localize if timezone is a string; otherwise replace the timezone if not None
-    pass
+    try:
+        parsed = parse(timestamp)
+
+        if parsed.tzinfo is None and tz is not None:
+            if type(tz) == str:
+                return timezone(tz).localize(parsed)
+            else:
+                return parsed.replace(tzinfo=tz)
+        else:
+            return parse(timestamp)
+    except ValueError:
+        return None
 
 
-def daytime(time,daycycle):
+def daytime(time, daycycle):
     """
     Returns true if the time takes place during the day.
     
@@ -136,10 +170,27 @@ def daytime(time,daycycle):
     """
     # HINT: Use the code from the previous exercise to get sunset AND sunrise
     # Add a timezone to time if one is missing (the one from the daycycle)
-    pass
+
+    iso_f = time.isoformat()  # This method return a string
+    month = iso_f[5:7]  # a string with the month of 'time' as two digits
+    day = iso_f[8:10]  # a string with the day of 'time' as two digits
+    dict_tz = timezone(daycycle['timezone'])
+
+    for d1 in daycycle.keys():  # looping through the first depth of the daycycle dict
+        if d1 == str(time.year):
+            for d2 in daycycle[d1].keys():  # looping through the second depth of the daycycle dict
+                if d2 == month + '-' + day:
+                    sr = daycycle[d1][d2]['sunrise']  # a string of the hour and minutes of the sunrise
+                    ss = daycycle[d1][d2]['sunset']  # a string of the hour and minutes of the sunset
+                    sunrise = dict_tz.localize(str_to_time(d1 + '-' + d2 + 'T' + sr))
+                    sunset = dict_tz.localize(str_to_time(d1 + '-' + d2 + 'T' + ss))
+                    if sunrise < time < sunset:
+                        return True
+                    else:
+                        return False
 
 
-def get_for_id(id,table):
+def get_for_id(id, table):
     """
     Returns (a copy of) a row of the table with the given id.
     
@@ -156,5 +207,10 @@ def get_for_id(id,table):
     Parameter table: The 2-dimensional table of data
     Precondition: table is a non-empty 2-dimension list of strings
     """
-    pass                    # Implement this function
+    for d1 in table:
+        for d2 in d1:
+            if d2 == id:
+                copy = d1
+                return copy
 
+    return None
