@@ -40,21 +40,20 @@ Date: THE DATE HERE
 """
 import utils
 
-
 # CERTIFICATION CLASSIFICATIONS
 # The certification of this pilot is unknown
 PILOT_INVALID = -1
 # A pilot that has joined the school, but has not soloed
-PILOT_NOVICE  = 0
+PILOT_NOVICE = 0
 # A pilot that has soloed but does not have a license
 PILOT_STUDENT = 1
 # A pilot that has a license, but has under 50 hours post license
 PILOT_CERTIFIED = 2
 # A pilot that 50 hours post license
-PILOT_50_HOURS  = 3
+PILOT_50_HOURS = 3
 
 
-def get_certification(takeoff,student):
+def get_certification(takeoff, student):
     """
     Returns the certification classification for this student at the time of takeoff.
     
@@ -78,10 +77,21 @@ def get_certification(takeoff,student):
     Parameter student: The student pilot
     Precondition: student is 10-element list of strings representing a pilot
     """
-    pass                    # Implement this function
+    dates = [utils.str_to_time(i) for i in student if type(utils.str_to_time(i)) == type(takeoff)]
+
+    if len(dates) >= 4 and takeoff > dates[3]:
+        return PILOT_50_HOURS
+    elif len(dates) >= 3 and takeoff > dates[2]:
+        return PILOT_CERTIFIED
+    elif len(dates) >= 2 and takeoff > dates[1]:
+        return PILOT_STUDENT
+    elif len(dates) >= 1 and takeoff > dates[0]:
+        return PILOT_NOVICE
+    else:
+        return PILOT_INVALID
 
 
-def has_instrument_rating(takeoff,student):
+def has_instrument_rating(takeoff, student):
     """
     Returns True if the student has an instrument rating at the time of takeoff, False otherwise
     
@@ -101,10 +111,11 @@ def has_instrument_rating(takeoff,student):
     Parameter student: The student pilot
     Precondition: student is 10-element list of strings representing a pilot
     """
-    pass                    # Implement this function
+    date = utils.str_to_time(student[7])
+    return True if type(date) == type(takeoff) and takeoff > date else False
 
 
-def has_advanced_endorsement(takeoff,student):
+def has_advanced_endorsement(takeoff, student):
     """
     Returns True if the student has an endorsement to fly an advanced plane at the time of takeoff.
     
@@ -122,10 +133,11 @@ def has_advanced_endorsement(takeoff,student):
     Parameter student: The student pilot
     Precondition: student is 10-element list of strings representing a pilot
     """
-    pass                    # Implement this function
+    date = utils.str_to_time(student[8])
+    return True if type(date) == type(takeoff) and takeoff > date else False
 
 
-def has_multiengine_endorsement(takeoff,student):
+def has_multiengine_endorsement(takeoff, student):
     """
     Returns True if the student has an endorsement to fly an multiengine plane at the time of takeoff.
     
@@ -143,7 +155,8 @@ def has_multiengine_endorsement(takeoff,student):
     Parameter student: The student pilot
     Precondition: student is 10-element list of strings representing a pilot
     """
-    pass                    # Implement this function
+    date = utils.str_to_time(student[9])
+    return True if type(date) == type(takeoff) and takeoff > date else False
 
 
 def get_minimums(cert, area, instructed, vfr, daytime, minimums):
