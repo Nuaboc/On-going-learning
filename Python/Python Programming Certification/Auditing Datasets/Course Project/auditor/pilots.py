@@ -248,7 +248,7 @@ def get_minimums(cert, area, instructed, vfr, daytime, minimums):
     certifications = {'Student': PILOT_STUDENT, 'Certified': PILOT_CERTIFIED, '50 Hours': PILOT_50_HOURS}
     x = 1
 
-    # loop though the table
+    # loop though the table 'minimums'
     for row in minimums[1:]:
         x += 1
         print('for row in minimums: row in line ..........' + str(x))
@@ -308,16 +308,62 @@ def get_minimums(cert, area, instructed, vfr, daytime, minimums):
     print(matches)
 
     # Find the best values for each column of the row
-    if len(matches) > 0:
+    if len(matches) > 1:
+        print('if len(matches) > 1:')
+        result = []
+        y = 0
 
-        a = []
         for row in matches:
+            print('for row in matches:')
+            print(row)
+            # b = []
             for col in row[4:]:
-                a.append(float(col))
+                print('for col in row[4:]:')
+                print(col)
+                print(y)
+                print(result)
+                if len(result) > y and result[y] > float(col) and y < 2:
+                    print('if len(result) > y and result[y] > col:')
+                    result.remove(result[y])
+                    result.insert(y, float(col))
+                    y += 1
+
+                elif len(result) > y and result[y] < float(col) and y < 2:
+                    print('elif len(result) > y and result[y] < col:')
+                    y += 1
+                    pass
+                elif len(result) > y > 1 and result[y] < float(col):
+                    result.remove(result[y])
+                    result.insert(y, float(col))
+                    y += 1
+                elif len(result) > y > 1 and result[y] > float(col):
+                    y += 1
+                    pass
+                else:
+                    print('else:')
+                    result.append(float(col))
+                    y += 1
+            y = 0
+            print(result)
         # return the lowest from ceiling and visibility........................
         # return the highest from wind and cross wind..........................
-
+            # a.append(b)
+        print(result)
         # return them in a list of four float values
-        return a
+        return result
+    elif len(matches) == 1:
+        print('elif len(matches) == 1:')
+        result = []
+
+        for row in matches:
+            print('for row in matches:')
+            for col in row[4:]:
+                print('for col in row[4:]:')
+                result.append(float(col))
+            # return the lowest from ceiling and visibility........................
+            # return the highest from wind and cross wind..........................
+        print(result)
+        # return them in a list of four float values
+        return result
     else:
         return None
