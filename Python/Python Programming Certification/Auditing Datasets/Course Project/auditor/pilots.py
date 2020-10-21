@@ -35,8 +35,8 @@ the functions simpler (because the preconditions ensure we have less to worry ab
 enforcing these preconditions can be quite hard. That is why it is not necessary to 
 enforce any of the preconditions in this module.
 
-Author: YOUR NAME HERE
-Date: THE DATE HERE
+Author: Gabriel Martinez
+Date: October 21, 2020
 """
 import utils
 
@@ -242,6 +242,82 @@ def get_minimums(cert, area, instructed, vfr, daytime, minimums):
     Parameter minimums: The table of allowed minimums
     Precondition: minimums is a 2d-list (table) as described above, including header
     """
+    print('New Test...............................................................')
     # Find all rows that can apply to this student
+    matches = []
+    certifications = {'Student': PILOT_STUDENT, 'Certified': PILOT_CERTIFIED, '50 Hours': PILOT_50_HOURS}
+    x = 1
+
+    # loop though the table
+    for row in minimums[1:]:
+        x += 1
+        print('for row in minimums: row in line ..........' + str(x))
+
+        try:
+
+            if row[0] == 'Dual' and instructed == True:
+                print('if row[0] == "Dual" and instructed == True:')
+                if row[1] == 'VMC' and vfr == True:
+                    print('if row[1] == "VMC" and vfr == True:')
+                    if row[2] == area or row[2] == 'Any':
+                        print('if row[2] == area or row[2] == "Any":')
+                        if row[3] == 'Day' and daytime == True:
+                            print('if row[3] == "Day" and daytime == True:')
+                            matches.append(row)
+                        elif row[3] == 'Night' and daytime == False:
+                            print('elif row[3] == "Night" and daytime == False:')
+                            matches.append(row)
+                if row[1] == 'IMC' and vfr == False:
+                    print('if row[1] == "IMC" and vfr == False:')
+                    if row[2] == area or row[2] == 'Any':
+                        print('if row[2] == area or row[2] == "Any":')
+                        if row[3] == 'Day' and daytime == True:
+                            print('if row[3] == "Day" and daytime == True:')
+                            matches.append(row)
+                        elif row[3] == 'Night' and daytime == False:
+                            print('elif row[3] == "Night" and daytime == False:')
+                            matches.append(row)
+
+            elif certifications[row[0]] == cert or row[0] == cert:
+                print('elif row[0] == cert:')
+                if row[1] == 'VMC' and vfr == True:
+                    print('if row[1] == "VMC" and vfr == True:')
+                    if row[2] == area:
+                        print('if row[2] == area:')
+                        if row[3] == 'Day' and daytime == True:
+                            print('if row[3] == "Day" and daytime == True:')
+                            matches.append(row)
+                        elif row[3] == 'Night' and daytime == False:
+                            print('elif row[3] == "Night" and daytime == False:')
+                            matches.append(row)
+                if row[1] == 'IMC' and vfr == False:
+                    print('if row[1] == "IMC" and vfr == False:')
+                    if row[2] == area:
+                        print('if row[2] == area:')
+                        if row[3] == 'Day' and daytime == True:
+                            print('if row[3] == "Day" and daytime == True:')
+                            matches.append(row)
+                        elif row[3] == 'Night' and daytime == False:
+                            print('elif row[3] == "Night" and daytime == False:')
+                            matches.append(row)
+
+        except KeyError:
+            print('pass')
+            pass
+
+    print(matches)
+
     # Find the best values for each column of the row
-    pass
+    if len(matches) > 0:
+
+        a = []
+        for row in matches:
+            for col in row[4:]:
+                a.append(float(col))
+        # return the lowest from ceiling and visibility........................
+        # return the highest from wind and cross wind..........................
+
+        # return them in a list of four float values
+        return a
+    else:
+        return None
