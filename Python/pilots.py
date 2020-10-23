@@ -36,7 +36,7 @@ enforcing these preconditions can be quite hard. That is why it is not necessary
 enforce any of the preconditions in this module.
 
 Author: Gabriel Martinez
-Date: October 22, 2020
+Date: October 21, 2020
 """
 import utils
 
@@ -77,8 +77,7 @@ def get_certification(takeoff, student):
     Parameter student: The student pilot
     Precondition: student is 10-element list of strings representing a pilot
     """
-    dates = [utils.str_to_time(i) for i in student if type(utils.str_to_time(i))
-             == type(takeoff)]
+    dates = [utils.str_to_time(i) for i in student if type(utils.str_to_time(i)) == type(takeoff)]
 
     if len(dates) >= 4 and takeoff > dates[3]:
         return PILOT_50_HOURS
@@ -243,90 +242,152 @@ def get_minimums(cert, area, instructed, vfr, daytime, minimums):
     Parameter minimums: The table of allowed minimums
     Precondition: minimums is a 2d-list (table) as described above, including header
     """
+    print('New Test...............................................................')
     # Find all rows that can apply to this student
     matches = []
-    certifications = {'Student': PILOT_STUDENT, 'Certified': PILOT_CERTIFIED,
-                      '50 Hours': PILOT_50_HOURS}
+    certifications = {'Student': PILOT_STUDENT, 'Certified': PILOT_CERTIFIED, '50 Hours': PILOT_50_HOURS}
+    x = 1
 
-    # Loop though the table 'minimums'
+    # loop though the table 'minimums'
     for row in minimums[1:]:
+        x += 1
+        print('for row in minimums: row in line ..........' + str(x))
 
         try:
 
             if row[0] == 'Dual' and instructed == True:
+                print('if row[0] == "Dual" and instructed == True:')
                 if row[1] == 'VMC' and vfr == True:
+                    print('if row[1] == "VMC" and vfr == True:')
 
                     if row[2] == area or row[2] == 'Any':
+                        print('if row[2] == area or row[2] == "Any":')
                         if row[3] == 'Day' and daytime == True:
+                            print('if row[3] == "Day" and daytime == True:')
                             matches.append(row)
+                            print('match added')
                         elif row[3] == 'Night' and daytime == False:
+                            print('elif row[3] == "Night" and daytime == False:')
                             matches.append(row)
-                    elif row[2] == 'Local' and area == 'Pattern' or row[2] == \
-                            'Local' and area == 'Practice Area':
+                            print('match added')
+                    elif row[2] == 'Local' and area == 'Pattern' or row[2] == 'Local' and area == 'Practice Area':
+                        print('elif row[2] == "local" and area == "Pattern" or row[2] == "Any":')
                         matches.append(row)
+                        print('match added')
 
                 elif row[1] == 'IMC' and vfr == False:
+                    print('if row[1] == "IMC" and vfr == False:')
                     if row[2] == area or row[2] == 'Any':
+                        print('if row[2] == area or row[2] == "Any":')
                         if row[3] == 'Day' and daytime == True:
+                            print('if row[3] == "Day" and daytime == True:')
                             matches.append(row)
+                            print('match added')
                         elif row[3] == 'Night' and daytime == False:
+                            print('elif row[3] == "Night" and daytime == False:')
                             matches.append(row)
+                            print('match added')
 
             elif certifications[row[0]] <= cert:
+                print('elif certifications[row[0]] <= cert')
                 if row[1] == 'VMC' and vfr == True:
+                    print('if row[1] == "VMC" and vfr == True:')
                     if row[2] == area:
+                        print('if row[2] == area:')
                         if row[3] == 'Day' and daytime == True:
+                            print('if row[3] == "Day" and daytime == True:')
                             matches.append(row)
+                            print('match added')
                         elif row[3] == 'Night' and daytime == False:
+                            print('elif row[3] == "Night" and daytime == False:')
                             matches.append(row)
-                    elif row[2] == 'Local' and area == 'Practice Area' or row[2] \
-                            == 'Local' and area == 'Pattern':
+                            print('match added')
+                    elif row[2] == 'Local' and area == 'Practice Area' or row[2] == 'Local' and area == 'Pattern':
+                        print('elif row[2] == "Local" and area == "Practice Area" or "Pattern":')
                         matches.append(row)
+                        print('match added')
                 if row[1] == 'IMC' and vfr == False:
+                    print('if row[1] == "IMC" and vfr == False:')
                     if row[2] == area or row[2] == 'Any':
+                        print('if row[2] == area or row[2] == "Any":')
                         if row[3] == 'Day' and daytime == True:
+                            print('if row[3] == "Day" and daytime == True:')
                             matches.append(row)
+                            print('match added')
                         elif row[3] == 'Night' and daytime == False:
+                            print('elif row[3] == "Night" and daytime == False:')
                             matches.append(row)
+                            print('match added')
 
         except KeyError:
+            print('pass')
             pass
 
-    # Find the best values for each column
+    print(matches)
+
+    # Find the best values for each column of the row
     if len(matches) > 1:
+        print('if len(matches) > 1:')
         result = []
         y = 0
 
         for row in matches:
+            print('for row in matches:')
+            print(row)
+            print(result)
 
             for col in row[4:]:
+                print('for col in row[4:]:')
+                print(col)
+                print(y)
                 if len(result) > y and result[y] > float(col) and y < 2:
+                    print('if len(result) > y and result[y] > col and y < 2:')
                     del result[y]
                     result.insert(y, float(col))
+                    print('value in index ' + str(y) + ' switched')
                     y += 1
                 elif len(result) > y and result[y] <= float(col) and y < 2:
+                    print('elif len(result) > y and result[y] <= col and y < 2')
                     y += 1
                     pass
                 elif len(result) > y > 1 and result[y] < float(col):
+                    print('elif len(result) > y > 1 and result[y] < float(col):')
+                    print(result)
+                    print('from ' + str(result[y]) + ' ... to ... ' + str(float(col)))
                     del result[y]
                     result.insert(y, float(col))
+                    print('value in index ' + str(y) + ' switched')
+                    print(result)
                     y += 1
                 elif len(result) > y > 1 and result[y] >= float(col):
+                    print('elif len(result) > y > 1 and result[y] >= float(col):')
                     y += 1
                     pass
                 else:
+                    print('else:')
                     result.append(float(col))
                     y += 1
             y = 0
-
+            print(result)
+        # return the lowest from ceiling and visibility........................
+        # return the highest from wind and cross wind..........................
+            # a.append(b)
+        print(result)
+        # return them in a list of four float values
         return result
     elif len(matches) == 1:
+        print('elif len(matches) == 1:')
         result = []
 
         for row in matches:
+            print('for row in matches:')
             for col in row[4:]:
+                print('for col in row[4:]:')
                 result.append(float(col))
-
+            # return the lowest from ceiling and visibility........................
+            # return the highest from wind and cross wind..........................
+        print(result)
+        # return them in a list of four float values
         return result
     else:
         return None
