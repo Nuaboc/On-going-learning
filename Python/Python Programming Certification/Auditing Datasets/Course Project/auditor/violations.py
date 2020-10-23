@@ -28,8 +28,8 @@ the functions simpler (because the preconditions ensure we have less to worry ab
 enforcing these preconditions can be quite hard. That is why it is not necessary to 
 enforce any of the preconditions in this module.
 
-Author: YOUR NAME HERE
-Date: THE DATE HERE
+Author: Gabriel Martinez
+Date: THE DATE
 """
 import utils
 import pilots
@@ -37,7 +37,7 @@ import os.path
 
 
 # WEATHER FUNCTIONS
-def bad_visibility(visibility,minimum):
+def bad_visibility(visibility, minimum):
     """
     Returns True if the visibility measurement violates the minimum, False otherwise
     
@@ -47,7 +47,7 @@ def bad_visibility(visibility,minimum):
     'FT' (feet) or 'SM' for (statute) miles, and explain how to interpret other three 
     fields, which are all floats.
     
-    This function should compare ths visibility 'minimum' (if it exists) against the 
+    This function should compare the visibility 'minimum' (if it exists) against the
     minimum parameter. Else it compares the 'prevailing' visibility. This function returns
     True if minimum is more than the measurement.  If the visibility is 'unavailable', 
     then this function returns True (indicating bad record keeping).
@@ -67,13 +67,25 @@ def bad_visibility(visibility,minimum):
     Precondition: visibility is a valid visibility measurement, as described above.
     (e.g. either a dictionary or the string 'unavailable')
     
-    Paramater minimum: The minimum allowed visibility (in statute miles)
+    Parameter minimum: The minimum allowed visibility (in statute miles)
     Precondition: minimum is a float or int
     """
-    pass                    # Implement this function
+    # remember to evaluate, compare and convert miles and feet
+    try:
+        if visibility['minimum'] < minimum:
+            return True
+        elif visibility['minimum'] > minimum:
+            return False
+    except KeyError:
+        if visibility['prevailing'] < minimum:
+            return True
+        elif visibility['prevailing'] > minimum:
+            return False
+        elif visibility == 'unavailable':
+            return True
 
 
-def bad_winds(winds,maxwind,maxcross):
+def bad_winds(winds, maxwind, maxcross):
     """
     Returns True if the wind measurement violates the maximums, False otherwise
     
@@ -118,7 +130,7 @@ def bad_winds(winds,maxwind,maxcross):
     pass                    # Implement this function
 
 
-def bad_ceiling(ceiling,minimum):
+def bad_ceiling(ceiling, minimum):
     """
     Returns True if the ceiling measurement violates the minimum, False otherwise
     
@@ -161,7 +173,7 @@ def bad_ceiling(ceiling,minimum):
     pass                    # Implement this function
 
 
-def get_weather_report(takeoff,weather):
+def get_weather_report(takeoff, weather):
     """
     Returns the most recent weather report at or before take-off.
     
@@ -243,7 +255,7 @@ def get_weather_report(takeoff,weather):
     pass
 
 
-def get_weather_violation(weather,minimums):
+def get_weather_violation(weather, minimums):
     """
     Returns a string representing the type of weather violation (empty string if flight is ok)
     
