@@ -4,7 +4,6 @@ A simple function comparing datetime objects.
 Author: Gabriel Martinez
 Date: October 13, 2020
 """
-import datetime
 
 
 def is_before(d1, d2):

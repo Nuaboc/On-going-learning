@@ -70,19 +70,18 @@ def bad_visibility(visibility, minimum):
     Parameter minimum: The minimum allowed visibility (in statute miles)
     Precondition: minimum is a float or int
     """
-    # remember to evaluate, compare and convert miles and feet
-    try:
-        if visibility['minimum'] < minimum:
-            return True
-        elif visibility['minimum'] > minimum:
-            return False
-    except KeyError:
+    if visibility == 'unavailable':
+        return True
+    elif visibility['units'] == 'SM':
         if visibility['prevailing'] < minimum:
             return True
-        elif visibility['prevailing'] > minimum:
+        elif visibility['prevailing'] >= minimum:
             return False
-        elif visibility == 'unavailable':
+    elif visibility['units'] == 'FT':
+        if visibility['minimum'] / 5280 < minimum:
             return True
+        elif visibility['minimum'] >= minimum:
+            return False
 
 
 def bad_winds(winds, maxwind, maxcross):
@@ -127,7 +126,25 @@ def bad_winds(winds, maxwind, maxcross):
     Paramater maxcross: The maximum allowable crosswind speed (in knots)
     Precondition: maxcross is a float or int
     """
-    pass                    # Implement this function
+    if winds == 'unavailable':
+        return True
+    elif winds == 'calm':
+        return False
+    elif winds['units'] == 'MPS':
+        winds['speed'] = winds['speed'] * 1.94384
+        winds['crosswind'] = winds['crosswind'] * 1.94384
+        if 'gusts' in winds:
+            winds['gusts'] = winds['gusts'] * 1.94384
+
+    if 'gusts' in winds:
+        if winds['gusts'] <= maxwind and winds['speed'] <= maxwind and winds['crosswind'] <= maxcross:
+            return False
+        elif winds['gusts'] > maxwind or winds['speed'] > maxwind or winds['crosswind'] > maxcross:
+            return True
+    elif winds['speed'] <= maxwind and winds['crosswind'] <= maxcross:
+        return False
+    elif winds['speed'] > maxwind or winds['crosswind'] > maxcross:
+        return True
 
 
 def bad_ceiling(ceiling, minimum):
@@ -170,7 +187,22 @@ def bad_ceiling(ceiling, minimum):
     Paramater minimum: The minimum allowed ceiling (in feet)
     Precondition: minimum is a float or int
     """
-    pass                    # Implement this function
+    clouds = ['broken', 'overcast', 'indefinite ceiling']
+    t = []
+
+    if ceiling == 'unavailable':
+        return True
+    elif ceiling == 'clear':
+        return False
+
+    for x in range(len(ceiling)):
+        if ceiling[x]['type'] in clouds and ceiling[x]['height'] < minimum:
+            t.append(True)
+
+    if True in t:
+        return True
+    else:
+        return False
 
 
 def get_weather_report(takeoff, weather):
@@ -252,7 +284,28 @@ def get_weather_report(takeoff, weather):
     
     # Search for time in dictionary
     # As fall back, find the closest time before takeoff
-    pass
+    print('New test ................................................................')
+    print(takeoff)
+
+    import datetime
+    from dateutil.parser import parse
+
+    tot = takeoff.isoformat()
+    delta = datetime.timedelta(minutes=30)
+
+    if tot in weather:
+        print('if tot in weather:')
+        return weather[tot]
+    else:
+        a = {}
+        for date in weather:
+            print('for date in weather:')
+            if parse(date) < takeoff:
+                print('if parse(date) < takeoff:')
+                a = date
+            elif parse(date) > takeoff:
+                print('elif parse(date) > takeoff:')
+                return a
 
 
 def get_weather_violation(weather, minimums):
