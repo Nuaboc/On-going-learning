@@ -278,34 +278,33 @@ def get_weather_report(takeoff, weather):
     Paramater weather: The weather report dictionary 
     Precondition: weather is a dictionary formatted as described above
     """
-    # HINT: Looping through the dictionary is VERY slow because it is so large
-    # You should convert the takeoff time to an ISO string and search for that first.
-    # Only loop through the dictionary as a back-up if that fails.
-    
-    # Search for time in dictionary
-    # As fall back, find the closest time before takeoff
-    print('New test ................................................................')
-    print(takeoff)
-
     import datetime
     from dateutil.parser import parse
 
     tot = takeoff.isoformat()
-    delta = datetime.timedelta(minutes=30)
+    delta = datetime.timedelta(hours=1)
+
+    if takeoff.minute != 00:
+        new_tot = tot[0:14] + '00' + tot[16:]
+        if new_tot in weather:
+            return weather[new_tot]
+        else:
+            new_date = parse(new_tot) - delta
+            for x in range(len(weather)):
+                if new_date.isoformat() in weather:
+                    return weather[new_date.isoformat()]
+                else:
+                    new_date = new_date - delta
 
     if tot in weather:
-        print('if tot in weather:')
         return weather[tot]
     else:
-        a = {}
-        for date in weather:
-            print('for date in weather:')
-            if parse(date) < takeoff:
-                print('if parse(date) < takeoff:')
-                a = date
-            elif parse(date) > takeoff:
-                print('elif parse(date) > takeoff:')
-                return a
+        date = takeoff - delta
+        for x in range(len(weather)):
+            if date.isoformat() in weather:
+                return weather[date.isoformat()]
+            else:
+                date = date - delta
 
 
 def get_weather_violation(weather, minimums):
@@ -366,20 +365,41 @@ def get_weather_violation(weather, minimums):
     Parameter minimums: The safety minimums for ceiling, visibility, wind, and crosswind
     Precondition: minimums is a list of four floats
     """
-    pass                    # Implement this function
+    if weather == None:
+        return 'Unknown'
+
+    a = bad_visibility(weather['visibility'], minimums[1])
+    b = bad_winds(weather['wind'], minimums[2], minimums[3])
+    c = bad_ceiling(weather['sky'], minimums[0])
+    d = [a, b, c]
+    e = []
+
+    if d[0]:
+        e.append('Visibility')
+    if d[1]:
+        e.append('Winds')
+    if d[2]:
+        e.append('Ceiling')
+
+    if len(e) > 1:
+        return 'Weather'
+    elif len(e) == 1:
+        return e[0]
+    elif len(e) == 0:
+        return ''
 
 
 # FILES TO AUDIT
 # Sunrise and sunset
 DAYCYCLE = 'daycycle.json'
 # Hourly weather observations
-WEATHER  = 'weather.json'
+WEATHER = 'weather.json'
 # The list of insurance-mandated minimums
 MINIMUMS = 'minimums.csv'
 # The list of all registered students in the flight school
 STUDENTS = 'students.csv'
 # The list of all take-offs (and landings)
-LESSONS  = 'lessons.csv'
+LESSONS = 'lessons.csv'
 
 
 def list_weather_violations(directory):
@@ -421,11 +441,11 @@ def list_weather_violations(directory):
     'weather.json', 'minimums.csv', 'students.csv', and 'lessons.csv'
     """
     # Load in all of the files
-    
+
     # For each of the lessons
-        # Get the takeoff time
-        # Get the pilot credentials
-        # Get the pilot minimums
-        # Get the weather conditions
-        # Check for a violation and add to result if so
+    # Get the takeoff time
+    # Get the pilot credentials
+    # Get the pilot minimums
+    # Get the weather conditions
+    # Check for a violation and add to result if so
     pass
