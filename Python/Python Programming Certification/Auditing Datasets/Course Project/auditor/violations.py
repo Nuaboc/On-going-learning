@@ -441,11 +441,16 @@ def list_weather_violations(directory):
     'weather.json', 'minimums.csv', 'students.csv', and 'lessons.csv'
     """
     # Load in all of the files
-    lessons = utils.read_csv(LESSONS)
-    minimums = utils.read_csv(MINIMUMS)
-    students = utils.read_csv(STUDENTS)
-    daycycle = utils.read_json(DAYCYCLE)
-    weather = utils.read_json(WEATHER)
+    f_l_path = os.path.join(directory, LESSONS)
+    lessons = utils.read_csv(f_l_path)
+    f_m_path = os.path.join(directory, MINIMUMS)
+    minimums = utils.read_csv(f_m_path)
+    f_s_path = os.path.join(directory, STUDENTS)
+    students = utils.read_csv(f_s_path)
+    f_dc_path = os.path.join(directory, DAYCYCLE)
+    daycycle = utils.read_json(f_dc_path)
+    f_w_path = os.path.join(directory, WEATHER)
+    weather = utils.read_json(f_w_path)
 
     instructed = False
     vfr = False

@@ -289,6 +289,7 @@ def test_str_to_time():
     
     print('  %s passed all tests' % fcn)
 
+
 def test_daytime():
     """
     Tests the function utils.daytime
