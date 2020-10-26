@@ -457,16 +457,12 @@ def list_weather_violations(directory):
         # Get the takeoff time
         takeoff = lessons[i][3]  # A datetime in iso format (str)
         tz = parse(takeoff).tzinfo
-        # This next line has a list of the student credentials as strings
         student = utils.get_for_id(lessons[i][0], students)  # A row of a pilot with his or her credentials
         dates = []
 
-        # HERE MIGHT GO A FOR LOOP FOR ALL THE DATETIMES IN THE LIST OF THE STUDENT CREDENTIALS...
         for dt in range(3, len(student)):
             if student[dt] != '' and isinstance(parse(student[dt]), type(parse(takeoff))):
                 dtw = parse(student[dt]).replace(tzinfo=tz)  # datetime with tz info
-                # time_without = parse(student[3])  # A datetime object without timezone info
-                # time_with = time_without.replace(tzinfo=tz)  # A datetime with timezone info
                 dates.append(dtw.isoformat())
 
         id = student[:3]
@@ -493,5 +489,4 @@ def list_weather_violations(directory):
             lesson.append(check)
             result.append(lesson)
 
-    print(result)
     return result
