@@ -34,6 +34,7 @@ Date: THE DATE
 import utils
 import pilots
 import os.path
+from dateutil.parser import parse
 
 
 # WEATHER FUNCTIONS
@@ -279,7 +280,6 @@ def get_weather_report(takeoff, weather):
     Precondition: weather is a dictionary formatted as described above
     """
     import datetime
-    from dateutil.parser import parse
 
     tot = takeoff.isoformat()
     delta = datetime.timedelta(hours=1)
@@ -365,7 +365,7 @@ def get_weather_violation(weather, minimums):
     Parameter minimums: The safety minimums for ceiling, visibility, wind, and crosswind
     Precondition: minimums is a list of four floats
     """
-    if weather == None:
+    if weather is None:
         return 'Unknown'
 
     a = bad_visibility(weather['visibility'], minimums[1])
@@ -441,11 +441,57 @@ def list_weather_violations(directory):
     'weather.json', 'minimums.csv', 'students.csv', and 'lessons.csv'
     """
     # Load in all of the files
+    lessons = utils.read_csv(LESSONS)
+    minimums = utils.read_csv(MINIMUMS)
+    students = utils.read_csv(STUDENTS)
+    daycycle = utils.read_json(DAYCYCLE)
+    weather = utils.read_json(WEATHER)
 
-    # For each of the lessons
-    # Get the takeoff time
-    # Get the pilot credentials
-    # Get the pilot minimums
-    # Get the weather conditions
-    # Check for a violation and add to result if so
-    pass
+    instructed = False
+    vfr = False
+
+    result = []
+
+    for i in range(1, len(lessons)):
+        lesson = lessons[i]
+        # Get the takeoff time
+        takeoff = lessons[i][3]  # A datetime in iso format (str)
+        tz = parse(takeoff).tzinfo
+        # This next line has a list of the student credentials as strings
+        student = utils.get_for_id(lessons[i][0], students)  # A row of a pilot with his or her credentials
+        dates = []
+
+        # HERE MIGHT GO A FOR LOOP FOR ALL THE DATETIMES IN THE LIST OF THE STUDENT CREDENTIALS...
+        for dt in range(3, len(student)):
+            if student[dt] != '' and isinstance(parse(student[dt]), type(parse(takeoff))):
+                dtw = parse(student[dt]).replace(tzinfo=tz)  # datetime with tz info
+                # time_without = parse(student[3])  # A datetime object without timezone info
+                # time_with = time_without.replace(tzinfo=tz)  # A datetime with timezone info
+                dates.append(dtw.isoformat())
+
+        id = student[:3]
+        student = id + dates
+
+        daytime = utils.daytime(parse(takeoff), daycycle)  # Returns a boolean indicating if takeoff was
+        # during the day
+
+        if lessons[i][2] != '':
+            instructed = True
+        if lessons[i][5] == 'VFR':
+            vfr = True
+
+        # Get the pilot credentials
+        credentials = pilots.get_certification(parse(takeoff), student)
+        # Get the pilot minimums
+        pilot_min = pilots.get_minimums(credentials, lessons[i][-1], instructed, vfr, daytime, minimums)
+        # Get the weather conditions
+        w_report = get_weather_report(parse(takeoff), weather)
+        # Check for a violation and add it to the list if so
+        check = get_weather_violation(w_report, pilot_min)
+
+        if check != '':
+            lesson.append(check)
+            result.append(lesson)
+
+    print(result)
+    return result
