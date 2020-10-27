@@ -29,7 +29,7 @@ enforcing these preconditions can be quite hard. That is why it is not necessary
 enforce any of the preconditions in this module.
 
 Author: Gabriel Martinez
-Date: THE DATE
+Date: October 23, 2020
 """
 import utils
 import pilots
