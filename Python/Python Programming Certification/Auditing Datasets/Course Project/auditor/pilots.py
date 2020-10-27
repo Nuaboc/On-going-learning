@@ -112,8 +112,14 @@ def has_instrument_rating(takeoff, student):
     Parameter student: The student pilot
     Precondition: student is 10-element list of strings representing a pilot
     """
-    date = utils.str_to_time(student[7])
-    return True if type(date) == type(takeoff) and takeoff > date else False
+    if student[7] != '':
+        date = utils.str_to_time(student[7])
+        if type(date) == type(takeoff) and takeoff > date:
+            return True
+        else:
+            return False
+    else:
+        return False
 
 
 def has_advanced_endorsement(takeoff, student):

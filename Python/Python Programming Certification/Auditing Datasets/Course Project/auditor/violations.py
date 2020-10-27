@@ -457,36 +457,36 @@ def list_weather_violations(directory):
 
     result = []
 
-    for i in range(1, len(lessons)):
-        lesson = lessons[i]
+    for lesson in lessons[1:]:
         # Get the takeoff time
-        takeoff = lessons[i][3]  # A datetime in iso format (str)
-        tz = parse(takeoff).tzinfo
-        student = utils.get_for_id(lessons[i][0], students)  # A row of a pilot with his or her credentials
+        tz = parse(lesson[3]).tzinfo  # tz from the lesson takeoff
+        takeoff = utils.str_to_time(lesson[3], tz)  # A datetime object
+        student = utils.get_for_id(lesson[0], students)  # A row of a pilot with his or her credentials
+        daytime = utils.daytime(parse(lesson[3]), daycycle)  # If takeoff was during day or night
         dates = []
 
         for dt in range(3, len(student)):
-            if student[dt] != '' and isinstance(parse(student[dt]), type(parse(takeoff))):
+            if student[dt] != '' and isinstance(parse(student[dt]), type(parse(takeoff.isoformat()))):
                 dtw = parse(student[dt]).replace(tzinfo=tz)  # datetime with tz info
-                dates.append(dtw.isoformat())
+                dates.append(dtw.isoformat())  # Add datetime in iso  format
+            else:
+                dates.append(student[dt])  # Add the rest of the values without dates
 
-        id = student[:3]
-        student = id + dates
+        id = student[:3]  # A list slice from student with the id number, first name and last name
+        student = id + dates  # Concatenate lists
+        ifr = pilots.has_instrument_rating(takeoff, student)
 
-        daytime = utils.daytime(parse(takeoff), daycycle)  # Returns a boolean indicating if takeoff was
-        # during the day
-
-        if lessons[i][2] != '':
+        if lesson[2] != '':
             instructed = True
-        if lessons[i][5] == 'VFR':
+        if lesson[5] == 'VFR':
             vfr = True
 
         # Get the pilot credentials
-        credentials = pilots.get_certification(parse(takeoff), student)
+        cert = pilots.get_certification(takeoff, student)
         # Get the pilot minimums
-        pilot_min = pilots.get_minimums(credentials, lessons[i][-1], instructed, vfr, daytime, minimums)
+        pilot_min = pilots.get_minimums(cert, lesson[-1], instructed, vfr, daytime, minimums)
         # Get the weather conditions
-        w_report = get_weather_report(parse(takeoff), weather)
+        w_report = get_weather_report(takeoff, weather)
         # Check for a violation and add it to the list if so
         check = get_weather_violation(w_report, pilot_min)
 
