@@ -459,10 +459,19 @@ def list_weather_violations(directory):
 
     for lesson in lessons[1:]:
         # Get the takeoff time
-        tz = parse(lesson[3]).tzinfo  # tz from the lesson takeoff
-        takeoff = utils.str_to_time(lesson[3], tz)  # A datetime object
-        student = utils.get_for_id(lesson[0], students)  # A row of a pilot with his or her credentials
-        daytime = utils.daytime(parse(lesson[3]), daycycle)  # If takeoff was during day or night
+        #tz = parse(lesson[3]).tzinfo  # tz from the lesson takeoff
+        #takeoff = utils.str_to_time(lesson[3], tz)  # A datetime object
+
+        #daytime = utils.daytime(parse(lesson[3]), daycycle)  # If takeoff was during day or night
+        takeoff = utils.str_to_time(lesson[3],daycycle['timezone'])
+        landing = utils.str_to_time(lesson[4],daycycle['timezone'])
+        daytime  = utils.daytime(takeoff,daycycle) and utils.daytime(landing,daycycle)
+
+
+
+
+
+        '''#Dylan: this isn't necessary
         dates = []
 
         for dt in range(3, len(student)):
@@ -475,16 +484,27 @@ def list_weather_violations(directory):
         id = student[:3]  # A list slice from student with the id number, first name and last name
         student = id + dates  # Concatenate lists
         ifr = pilots.has_instrument_rating(takeoff, student)
-
-        if lesson[2] != '':
-            instructed = True
-        if lesson[5] == 'VFR':
-            vfr = True
+        '''
 
         # Get the pilot credentials
+        student = utils.get_for_id(lesson[0], students)  # A row of a pilot with his or her credentials
         cert = pilots.get_certification(takeoff, student)
+
+
+
         # Get the pilot minimums
-        pilot_min = pilots.get_minimums(cert, lesson[-1], instructed, vfr, daytime, minimums)
+        #if lesson[2] != '':
+        #    instructed = True
+        #you are missing the false condition
+        teacher = lesson[2]
+        instructed = teacher != ''
+
+        #missing false condiiton
+        #if lesson[5] == 'VFR':
+        #    vfr = True
+        vfr = lesson[5] == 'VFR'
+
+        pilot_min = pilots.get_minimums(cert, lesson[6], instructed, vfr, daytime, minimums)
         # Get the weather conditions
         w_report = get_weather_report(takeoff, weather)
         # Check for a violation and add it to the list if so
