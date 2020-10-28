@@ -59,7 +59,7 @@ def discover_violations(directory, output):
 
     result = violations.list_weather_violations(directory)
     amount = len(result)
-    result.append(0, header)
+    result.insert(0, header)
     file = None
 
     if output is not None:
@@ -68,7 +68,10 @@ def discover_violations(directory, output):
     if amount == 0:
         print('No violations found.')
     else:
-        print(str(amount) + ' violations found.')
+        if amount == 1:
+            print(str(amount) + ' violation found.')
+        else:
+            print(str(amount) + ' violations found.')
 
     return file
 
