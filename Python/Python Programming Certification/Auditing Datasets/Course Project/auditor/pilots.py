@@ -77,6 +77,8 @@ def get_certification(takeoff, student):
     Parameter student: The student pilot
     Precondition: student is 10-element list of strings representing a pilot
     """
+
+    '''
     dates = [utils.str_to_time(i) for i in student if type(utils.str_to_time(i))
              == type(takeoff)]
 
@@ -90,36 +92,51 @@ def get_certification(takeoff, student):
         return PILOT_NOVICE
     else:
         return PILOT_INVALID
+    '''
+    compare = utils.str_to_time(student[6],takeoff.tzinfo)
+    if not compare is None and compare < takeoff:
+        return PILOT_50_HOURS
+
+    # License
+    compare = utils.str_to_time(student[5],takeoff.tzinfo)
+    if not compare is None and compare < takeoff:
+        return PILOT_CERTIFIED
+
+    # Soloed
+    compare = utils.str_to_time(student[4],takeoff.tzinfo)
+    if not compare is None and compare < takeoff:
+        return PILOT_STUDENT
+
+    # Joined
+    compare = utils.str_to_time(student[3],takeoff.tzinfo)
+    if not compare is None and compare < takeoff:
+        return PILOT_NOVICE
+
+    return PILOT_INVALID
 
 
 def has_instrument_rating(takeoff, student):
     """
     Returns True if the student has an instrument rating at the time of takeoff, False otherwise
-    
+
     Recall that a student is a 10-element list of strings.  The first three elements are
     the student's identifier, last name, and first name.  The remaining elements are all
-    timestamps indicating the following in order: time joining the school, time of first 
-    solo, time of private license, time of 50 hours certification, time of instrument 
+    timestamps indicating the following in order: time joining the school, time of first
+    solo, time of private license, time of 50 hours certification, time of instrument
     rating, time of advanced endorsement, and time of multiengine endorsement.
-    
+
     NOTE: Just because a pilot has an instrument rating does not mean that every flight
     with that pilot is an IFR flight.  It just means the pilot could choose to use VFR
     or IFR rules.
-    
+
     Parameter takeoff: The takeoff time of this flight
     Precondition: takeoff is a datetime object
-    
+
     Parameter student: The student pilot
     Precondition: student is 10-element list of strings representing a pilot
     """
-    if student[7] != '':
-        date = utils.str_to_time(student[7])
-        if type(date) == type(takeoff) and takeoff > date:
-            return True
-        else:
-            return False
-    else:
-        return False
+    date = utils.str_to_time(student[7])
+    return True if type(date) == type(takeoff) and takeoff > date else False
 
 
 def has_advanced_endorsement(takeoff, student):
