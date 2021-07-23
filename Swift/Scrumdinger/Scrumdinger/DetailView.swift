@@ -64,6 +64,7 @@ struct DetailView: View {
             data = scrum.data
         })
         .navigationTitle(scrum.title)
+        // When isPresented changes to true, the app modally presents EditView using the entire screen.
         .fullScreenCover(isPresented: $isPresented) {
             NavigationView {
                 EditView(scrumData: $data)

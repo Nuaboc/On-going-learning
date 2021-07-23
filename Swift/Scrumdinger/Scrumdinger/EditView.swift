@@ -5,14 +5,25 @@
 import SwiftUI
 
 struct EditView: View {
+    // This View allow the user to access some editable feeatures of the meeting
     @Binding var scrumData: DailyScrum.Data
+    // define the property using the @State wrapper because you need to mutate the property from within the view.
+    /*
+     SwiftUI observes @State properties and automatically redraws the view’s body when the property changes. This behavior ensures the UI stays up to
+     date as the user manipulates the onscreen controls.
+     */
+    // Declare @State properties as private so they can be accessed only within the view in which you define them.
+    // The newAttendee property will hold the attendee name the user enters.
     @State private var newAttendee = ""
     var body: some View {
         List {
             Section(header: Text("Meeting Info")) {
+                // This textfield will hold the desired name for the meeting
+                // It's default value will be "Title" but wil be able to change
                 TextField("Title", text: $scrumData.title)
                 HStack {
                     Slider(value: $scrumData.lengthInMinutes, in: 5...30, step: 1.0) {
+                        // This Text view won’t appear on screen, but VoiceOver uses it to identify the purpose of the slider.
                         Text("Length")
                     }
                     .accessibilityValue(Text("\(Int(scrumData.lengthInMinutes)) minutes"))
@@ -41,6 +52,7 @@ struct EditView: View {
                         Image(systemName: "plus.circle.fill")
                             .accessibilityLabel(Text("Add attendee"))
                     }
+                    // Make unavailable to add attendees without text
                     .disabled(newAttendee.isEmpty)
                 }
             }
