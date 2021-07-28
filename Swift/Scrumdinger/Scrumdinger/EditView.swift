@@ -5,9 +5,9 @@
 import SwiftUI
 
 struct EditView: View {
-    // This View allow the user to access some editable feeatures of the meeting
+    // This View allow the user to access some editable features of the meeting
     
-    // Because scrumData is now passed in during initialization, there's no need to use the private attribute and DailyScrum.Data initialization.
+    // Because scrumData is now passed in during initialization, there's no need to use the @private property and DailyScrum.Data initialization.
     // no need of >>@Static private var scrumData: DailyScrum.Data = DailyScrum.Data()<<
     @Binding var scrumData: DailyScrum.Data
     // define the property using the @State wrapper because you need to mutate the property from within the view.
@@ -18,6 +18,7 @@ struct EditView: View {
     // Declare @State properties as private so they can be accessed only within the view in which you define them.
     // The newAttendee property will hold the attendee name the user enters.
     @State private var newAttendee = ""
+    
     var body: some View {
         List {
             Section(header: Text("Meeting Info")) {

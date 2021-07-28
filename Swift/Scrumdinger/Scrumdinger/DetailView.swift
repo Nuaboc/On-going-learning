@@ -55,7 +55,6 @@ struct DetailView: View {
                     }
                 }
             }
-
         }
         // This modifier adds rounded corners and insets the list from the edges of the parent view.
         .listStyle(InsetGroupedListStyle())
@@ -67,6 +66,11 @@ struct DetailView: View {
         // When isPresented changes to true, the app modally presents EditView using the entire screen.
         .fullScreenCover(isPresented: $isPresented) {
             NavigationView {
+                // the EditView initializer include a binding to data making possible to users to make modifications
+                // to scrumData in the edit view are now shared with the data property in the detail view.
+                
+                // data we were accessing a Bool value
+                // $data we're accessing a Binding<Bool> value    **************************************************
                 EditView(scrumData: $data)
                     .navigationTitle(scrum.title)
                     .navigationBarItems(leading: Button("Cancel") {

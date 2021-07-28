@@ -6,7 +6,9 @@ import SwiftUI
 
 @main
 struct ScrumdingerApp: App {
+    
     @ObservedObject private var data = ScrumData()
+    
     var body: some Scene {
         // If it would be an ipad or mac app it could have more than 1 View.
         // But because is an ios app the main scene for the app can have only 1 window
