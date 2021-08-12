@@ -6,9 +6,14 @@ import SwiftUI
 
 struct ScrumsView: View {
     @Binding var scrums: [DailyScrum]
+    
+    // You’ll observe this value and save user data when it becomes inactive.
     @Environment(\.scenePhase) private var scenePhase
+    // The isPresented property controls the presentation of the EditView to create a new scrum.
     @State private var isPresented = false
     @State private var newScrumData = DailyScrum.Data()
+    
+    // You’ll provide the saveAction closure when instantiating ScrumsView.
     let saveAction: () -> Void
     
     var body: some View {
@@ -29,6 +34,7 @@ struct ScrumsView: View {
         }) {
             Image(systemName: "plus")
         })
+        // A sheet presents a view similar to fullScreenCover, but it provides context by leaving the underlying view partially visible.
         .sheet(isPresented: $isPresented) {
             NavigationView {
                 EditView(scrumData: $newScrumData)
@@ -42,7 +48,10 @@ struct ScrumsView: View {
                     })
             }
         }
+        // You can use onChange(of:perform:) to trigger actions when a specified value changes.
         .onChange(of: scenePhase) { phase in
+            // A scene in the inactive phase no longer receives events and may be unavailable to the user.
+            // Tip: Refer to ScenePhase for descriptions of each phase and instructions for triggering actions when the phase changes.
             if phase == .inactive { saveAction() }
         }
     }
@@ -58,6 +67,7 @@ struct ScrumsView: View {
 struct ScrumsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
+            // pass an empty closure for the saveAction argument in the preview.
             ScrumsView(scrums: .constant(DailyScrum.data), saveAction: {})
         }
     }

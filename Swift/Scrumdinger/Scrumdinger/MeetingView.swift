@@ -7,6 +7,7 @@ import AVFoundation
 
 struct MeetingView: View {
     @Binding var scrum: DailyScrum
+    // @StateObject is a property wrapper that stores a reference type for the life cycle of the ScrumTimer() View
     @StateObject var scrumTimer = ScrumTimer()
     @State private var transcript = ""
     @State private var isRecording = false

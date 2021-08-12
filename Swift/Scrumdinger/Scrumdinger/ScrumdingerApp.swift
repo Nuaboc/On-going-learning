@@ -16,6 +16,7 @@ struct ScrumdingerApp: App {
             // Adding the NavigationView displays navigation elements, like title and bar buttons, on the canvas.
             NavigationView {
                 ScrumsView(scrums: $data.scrums) {
+                    // The app saves the user’s scrums when it becomes inactive.
                     data.save()
                 }
             }

@@ -69,7 +69,6 @@ struct DetailView: View {
                 // the EditView initializer include a binding to data making possible to users to make modifications
                 // to scrumData in the edit view are now shared with the data property in the detail view.
                 
-                // data we were accessing a Bool value
                 // $data we're accessing a Binding<Bool> value    **************************************************
                 EditView(scrumData: $data)
                     .navigationTitle(scrum.title)
