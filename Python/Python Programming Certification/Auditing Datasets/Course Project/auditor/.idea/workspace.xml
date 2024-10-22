@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8feea10-a342-4350-bea3-5d42a05cce70" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../../DF/pythonProjectTest/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../DF/pythonProjectTest/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../DF/pythonProjectTest/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../DF/pythonProjectTest/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../DF/pythonProjectTest/.idea/pythonProjectTest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../DF/pythonProjectTest/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Currency Converter/testcurrency.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Currency Converter/testcurrency.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../wow.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../wow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,23 +15,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2iv5u8JRuHF6PAeA7lFBLzxn8FE" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.app.executor": "Run",
-    "Python.currency.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Development",
-    "last_opened_file_path": "/Users/gml/Repos/GitHub/On-going-learning/Python/Python Programming Certification/Auditing Datasets/Course Project/auditor"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.currency.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Development&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/gml/Repos/GitHub/On-going-learning/Python/Python Programming Certification/Auditing Datasets/Course Project/auditor&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
