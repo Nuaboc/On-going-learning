@@ -1,29 +1,21 @@
-// Testing refactoring...
-import 'package:english_words/english_words.dart';
+// ignore: file_names
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:namer_app/main.dart';
 
-import 'main.dart';
 
-
-class FavoritesPage extends StatelessWidget {
+class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     var appState = context.watch<MyAppState>();
 
-    if (appState.favorites.isEmpty) {
-      return Center(
-        child: Text('No favorites yet.'),
-      );
-    }
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         AppBar(
-          title: Text ('You have '
-              '${appState.favorites.length} favoritos...'),
+          title: const Text ('Settings'),
           titleTextStyle: TextStyle(fontSize: 18, foreground: Paint(), fontWeight: FontWeight.w500),
           backgroundColor: Color.fromARGB(124, 10, 208, 195),
           toolbarHeight: 40,
@@ -34,7 +26,8 @@ class FavoritesPage extends StatelessWidget {
           thickness: 1,
         ),
         Expanded(
-          child: ListView(
+          child: 
+          ListView(
             children: [
               for (var pair in appState.favorites)
                 ListTile(
