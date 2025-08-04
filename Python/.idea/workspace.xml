@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b3a435d-e635-4ae3-ae81-c2809b9aa0fe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -12,27 +14,35 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
   <component name="ProjectId" id="1fb23mqBF9Fd6HZT4XggJu1jir1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.mpl_squares.executor": "Run",
+    "Python.testcurrency (1).executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "Development",
+    "last_opened_file_path": "C:/Repos/On-going-learning/Python"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Nuaboc\Desktop" />
       <recent name="D:\Repos\Github\On-going-learning\Python\Python Programming Certification" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.testcurrency (1)">
+  <component name="RunManager">
     <configuration name="currency" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -54,6 +64,7 @@
     </configuration>
     <configuration name="die " type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -75,6 +86,7 @@
     </configuration>
     <configuration name="exchangeit" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -96,14 +108,16 @@
     </configuration>
     <configuration name="testcurrency (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.9" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python Programming Certification" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python Programming Certification/testcurrency.py" />
@@ -117,6 +131,7 @@
     </configuration>
     <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -146,6 +161,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -171,41 +193,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value=".." />
     <option name="LAST_COMMIT_MESSAGE" value=".." />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="2196" y="305" key="CommitChangelistDialog2" timestamp="1597078428375">
-      <screen x="1920" y="305" width="1366" height="728" />
-    </state>
-    <state x="2196" y="305" key="CommitChangelistDialog2/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078428375" />
-    <state x="651" y="151" key="FileChooserDialogImpl" timestamp="1597176699168">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="651" y="151" key="FileChooserDialogImpl/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1597176699168" />
-    <state x="2383" y="411" key="FileChooserDialogImpl/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078851487" />
-    <state width="1899" height="414" key="GridCell.Tab.0.bottom" timestamp="1597284976570">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="414" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1597284976570" />
-    <state width="1345" height="175" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078859911" />
-    <state width="1899" height="414" key="GridCell.Tab.0.center" timestamp="1597284976569">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="414" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1597284976569" />
-    <state width="1345" height="175" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078859911" />
-    <state width="1899" height="414" key="GridCell.Tab.0.left" timestamp="1597284976569">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="414" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1597284976569" />
-    <state width="1345" height="175" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078859910" />
-    <state width="1899" height="414" key="GridCell.Tab.0.right" timestamp="1597284976570">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="414" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1597284976569" />
-    <state width="1345" height="175" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597078859911" />
-    <state x="2104" y="314" key="SettingsEditor" timestamp="1597274917605">
-      <screen x="1920" y="305" width="1366" height="728" />
-    </state>
-    <state x="2104" y="314" key="SettingsEditor/0.0.1920.1040/1920.305.1366.728@1920.305.1366.728" timestamp="1597274917605" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
